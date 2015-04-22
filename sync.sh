@@ -1,3 +1,3 @@
-git pull origin master
+git pull
 mkdocs build --clean
-service apache2 restart
+service apache2 reload
