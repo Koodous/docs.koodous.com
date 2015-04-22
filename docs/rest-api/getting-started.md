@@ -9,11 +9,11 @@ your user page to get your access token.
 
 ## Authentication
 
-Almost every request need to specify your user token using `Authorization` header. A request with token `c080ddd1fab46fc919ca0d62299e9995b1886853` should looks like follows:
+Almost every request need to specify your user token using `Authorization` header. A request with token `c080ddd1fab46bc919ca0d62299e9995b1886853` should looks like follows:
 
 ```
 GET /api/apks
-Authorization: Token c080ddd1fab46fc919ca0d62299e9995b1886853
+Authorization: Token c080ddd1fab46bc919ca0d62299e9995b1886853
 ```
 
 ## Response
@@ -33,8 +33,8 @@ Responses format are json. The example response of the last request will looks l
             "md5": "ee644f55b915c9fb3362be28647eb976",
             "sha1": "dee89c3cb639ca791ea3e7e2da3d7b8ac7972e13",
             "sha256": "4891047860f004894de77b4c8018e3f69bb50a210159b77119e90dcd87860e98",
-            "app": "PornNow",
-            "package_name": "com.digitaran.pornnow",
+            "app": "9812hnj",
+            "package_name": "com.digitaran.9812hnj",
             "company": "Digitaran",
             "displayed_version": "1.0",
             "size": 1040818,
