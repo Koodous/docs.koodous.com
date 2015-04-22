@@ -1,9 +1,17 @@
 site_name: Koodous Documentation
-favicon: favicon.png
+site_favicon: favicon.png
+google_analytics: ['UA-62062848-2', 'docs.koodous.com']
+strict: true
+theme: readthedocs
 pages:
 - ['index.md', 'Home']
 
 - ['rest-api/getting-started.md','REST API', 'Getting started']
 - ['rest-api/apks.md','REST API', 'APKs']
+- ['rest-api/apk-comments.md','REST API', 'APK Comments']
+- ['rest-api/analysts.md','REST API', 'Analysts']
+- ['rest-api/rulesets.md','REST API', 'Rulesets']
+- ['rest-api/notifications.md','REST API', 'Notifications']
+- ['rest-api/activity.md','REST API', 'Activity']
 
 - ['yara/getting-started.md','Yara', 'Getting started']
