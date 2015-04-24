@@ -49,10 +49,9 @@ Examples:
         {
             "id": 114,
             "author": {
-                "username": "dvaca",
-                "email": "dvaca@hispasec.com",
-                "first_name": "Daniel",
-                "last_name": "Vaca",
+                "username": "user1",
+                "first_name": "Robert",
+                "last_name": "Smith",
                 "date_joined": 1414423670,
                 "last_login": 1429694015,
                 "total_public_rulesets": 1,
@@ -60,9 +59,9 @@ Examples:
                 "total_following": 6,
                 "total_comments": 27,
                 "avatar_url": "/media/avatars/116585.jpg",
-                "occupation": "Developer",
-                "bio": "Frontend developer at Hispasec",
-                "twitter_user": "Diviei",
+                "occupation": "Malware analyst",
+                "bio": "Malware analyst",
+                "twitter_user": "",
                 "can_invite": true
             },
             "apk": "cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544",
