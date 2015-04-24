@@ -5,6 +5,7 @@ strict: true
 theme: readthedocs
 pages:
 - ['index.md', 'Home']
+- ['web/hands-on.md','The Koodous web', 'Hands on']
 
 - ['rest-api/getting-started.md','REST API', 'Getting started']
 - ['rest-api/apks.md','REST API', 'APKs']
