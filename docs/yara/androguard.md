@@ -44,6 +44,21 @@ Of course, this filter does not indicate that the application send SMSs, but may
 
 # Permissions
 
-In order to detect some applications 
+In order to detect some applications that requires an special or desired permissions, you can use this condition. It find in all permissions of the application and if one of this match with the regular expression, it generates a notification.
 
-androguard.permission(/RESTART_PACKAGES/)
+The format is the next:
+```
+androguard.permission(regex)
+```
+
+And you must use in the conditions section:
+
+```
+rule videogames
+{
+	condition:
+		androguard.permission(/RESTART_PACKAGES/)
+}
+```
+
+The complete list of the permissions used in the manifest are in the official Android documentation http://developer.android.com/reference/android/Manifest.permission.html
