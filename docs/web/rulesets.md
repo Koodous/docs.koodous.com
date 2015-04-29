@@ -1,5 +1,3 @@
-# Rulesets
-
 The Yara rules are a great tool to make a static analysis over a sample.
 
 ## Searching

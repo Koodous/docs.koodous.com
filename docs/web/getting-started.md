@@ -1,5 +1,3 @@
-# Getting started
-
 Koodous is a collaborative platform focused on the detection of fraudulent patterns in Android applications.
 
 ## My God, it's full of apps

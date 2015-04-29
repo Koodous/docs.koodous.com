@@ -5,10 +5,8 @@ strict: true
 theme: readthedocs
 pages:
 - ['index.md', 'Home']
-***
 - ['web/getting-started.md','The Koodous web', 'Getting started']
 - ['web/the-repo.md','The Koodous web', 'The repository']
-***
 - ['rest-api/getting-started.md','REST API', 'Getting started']
 - ['rest-api/apks.md','REST API', 'APKs']
 - ['rest-api/apk-comments.md','REST API', 'APK Comments']
@@ -16,9 +14,6 @@ pages:
 - ['rest-api/rulesets.md','REST API', 'Rulesets']
 - ['rest-api/notifications.md','REST API', 'Notifications']
 - ['rest-api/activity.md','REST API', 'Activity']
-
-***
-
 - ['yara/getting-started.md','Yara', 'Getting started']
 - ['yara/androguard.md','Yara', 'Androguard']
 - ['yara/droidbox.md','Yara', 'Droidbox']

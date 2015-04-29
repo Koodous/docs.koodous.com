@@ -1,5 +1,3 @@
-# The repository
-
 The repository screen of Koodous let you search through _millions of packages_ looking for any particular application. Once you have found your "target", you can access the detailed view, where you can vote, comment, download it and ask for an on-demand analisys. 
 
 ***
@@ -8,12 +6,14 @@ The repository screen of Koodous let you search through _millions of packages_ l
 
 In the repository screen you can search for any APK in the system. Depending of the fields, the search will return APKs with an exact or partial match:
 
-* Partial match fields
+#### Partial match fields
+
 ** App name
 ** Package
 ** Developer
 
-* Exact match fields
+#### Exact match fields
+
 ** SHA256
 ** SHA1
 ** MD5
