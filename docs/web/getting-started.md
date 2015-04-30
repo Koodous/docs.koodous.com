@@ -6,7 +6,7 @@ We provide you literally millions of apks to download and analyze. The repositor
 
 ## Analyze by your rules
 
-We love Yara rules, and we thought you could find them useful too. You can write your own rulesets and launch them against any APK of your choice, or maybe just sit back, relax and wait. Our analysis system will apply you rules to every fresh uploaded APK and alert you when a match shows up. 
+We love Yara rules, and we thought you could find them useful too. You can write your own rulesets and launch them against any APK of your choice, or just sit back, relax and wait. Our analysis system will apply you rules to every fresh uploaded APK and alert you when a match shows up. 
 
 ## Get social
 
@@ -16,7 +16,7 @@ Also, we introduce the social Yara rulesets. What if I like the rules that other
 
 ## Koodous' finest
 
-If the community find your rulesets useful you will accumulate followers and eventually reach the Top 25 Koodous users. If you receive such honor, your will be part of the chosen ones that stablish the reputation of the APKs for the mobile application. This means taht your rules will help people to be safe, as they will be warned if a app installed in their phones or tablets match your rules.
+If the community find your rulesets useful you will accumulate followers and eventually get a high position in our ranking. If you receive such honor, you will be part of the chosen ones that stablish the reputation of the APKs for the mobile application. This means that your Yara rules will help people to be safe, as they will be warned if a app installed in their phones or tablets match them.
 
 ## Or go solo
 
