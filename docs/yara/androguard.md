@@ -8,7 +8,7 @@ First of all, you need to import the module with the next directive at the heade
 import "androguard"
 ```
 # Package name
-Each Android application has a package name that need to be unique once the application is installed in the mobile phone, but in the will, we found several applications with the same (or similar) package name. To find this kind of applications, we can use the next condition (we use a complete rule to explain the COMPORTAMIENTO):
+Each Android application has a package name that need to be unique once the application is installed in the mobile phone, but in the wild, we found several applications with the same (or similar) package name. To find this kind of applications, we can use the next condition (we use a complete rule for explain the behaviour):
 
 ```
 androguard.package_name(regex)
@@ -61,4 +61,4 @@ rule videogames
 }
 ```
 
-The complete list of the permissions used in the manifest are in the official Android documentation http://developer.android.com/reference/android/Manifest.permission.html
+The complete list of the permissions used in the manifest are in the [official Android documentation](http://developer.android.com/reference/android/Manifest.permission.html), but remember that some applications can have its own permissions!
