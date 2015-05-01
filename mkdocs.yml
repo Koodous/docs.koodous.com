@@ -16,5 +16,4 @@ pages:
 - ['rest-api/activity.md','REST API', 'Activity']
 - ['yara/getting-started.md','Yara', 'Getting started']
 - ['yara/androguard.md','Yara', 'Androguard']
-- ['yara/droidbox.md','Yara', 'Droidbox']
 
