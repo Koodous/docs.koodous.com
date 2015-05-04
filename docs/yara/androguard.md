@@ -78,3 +78,22 @@ rule videogames
 ```
 
 The complete list of the permissions used in the manifest are in the [official Android documentation](http://developer.android.com/reference/android/Manifest.permission.html), but remember that some applications can have its own permissions!
+
+# Certificate
+In our website, one of the details of each APK is the "Developer". If you are a malware analyst, you must know that this field is not easy to know, so we use the APK' certificate to extract it. If you encounter a serie of APKs with the same Developer, you can create a Yara rule to know more of them.
+
+## Issuer
+The issuer of a certificate is the person (or entity) that generate the certificate. With the next condition you can match with it:
+
+```
+androguard.certificate.issuer(regex)
+```
+
+## Subject
+The subject of a certificate is the owner of its. To match with this field, you can use:
+
+```
+androguard.certificate.subject(regex)
+```
+
+NOTE: Normally, Issuer and Subject in an APK' certificates are the same, but this is not a norm.
