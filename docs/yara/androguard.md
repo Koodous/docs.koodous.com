@@ -22,13 +22,29 @@ rule videogames
 	condition:
 		androguard.package_name(/videogame/)
 }
-
 ```
 
 You can add more restrictions to this rule, like strings, another functions of this module or conditions of another module.
 
-# Activity
+# APP name
+The app name displayed when you install an application in a device could be an indicator of an "anomaly". For this reason, we have an condition to catch this applications.
 
+```
+androguard.app_name(regex)
+```
+
+```
+rule videogames
+{
+	meta:
+		description = "Rule to catch APKs with app name match with cars"
+	condition:
+		androguard.app_name(/cars/)
+}
+```
+
+
+# Activity
 The activities is an esential part of the Android applications. They define the "screens" of an application and its logic, so, with the name of that, you can filter some applications. In the next example, we are going to filter applications which the name one of its activity is sms, with a point after and before of that word:
 
 
