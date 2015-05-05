@@ -84,10 +84,10 @@ Request Method:POST
 Status Code:201 CREATED
 ```
 
-Payload and response should looks like following:
+Payload should looks like following:
 
 ```json
-{text: "test2"}
+{"text": "test2"}
 ```
 
 ## Comment deletion
