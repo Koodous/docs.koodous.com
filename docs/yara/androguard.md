@@ -8,7 +8,7 @@ First of all, you need to import the module with the next directive at the heade
 import "androguard"
 ```
 # Package name
-Each Android application has a package name that need to be unique once the application is installed in the mobile phone, but in the will, we found several applications with the same (or similar) package name. To find this kind of applications, we can use the next condition (we use a complete rule to explain the COMPORTAMIENTO):
+Each Android application has a package name that need to be unique once the application is installed in the mobile phone, but in the wild, we found several applications with the same (or similar) package name. To find this kind of applications, we can use the next condition (we use a complete rule for explain the behaviour):
 
 ```
 androguard.package_name(regex)
@@ -22,13 +22,29 @@ rule videogames
 	condition:
 		androguard.package_name(/videogame/)
 }
-
 ```
 
 You can add more restrictions to this rule, like strings, another functions of this module or conditions of another module.
 
-# Activity
+# APP name
+The app name displayed when you install an application in a device could be an indicator of an "anomaly". For this reason, we have an condition to catch this applications.
 
+```
+androguard.app_name(regex)
+```
+
+```
+rule videogames
+{
+	meta:
+		description = "Rule to catch APKs with app name match with cars"
+	condition:
+		androguard.app_name(/cars/)
+}
+```
+
+
+# Activity
 The activities is an esential part of the Android applications. They define the "screens" of an application and its logic, so, with the name of that, you can filter some applications. In the next example, we are going to filter applications which the name one of its activity is sms, with a point after and before of that word:
 
 
@@ -61,4 +77,23 @@ rule videogames
 }
 ```
 
-The complete list of the permissions used in the manifest are in the official Android documentation http://developer.android.com/reference/android/Manifest.permission.html
+The complete list of the permissions used in the manifest are in the [official Android documentation](http://developer.android.com/reference/android/Manifest.permission.html), but remember that some applications can have its own permissions!
+
+# Certificate
+In our website, one of the details of each APK is the "Developer". If you are a malware analyst, you must know that this field is not easy to know, so we use the APK' certificate to extract it. If you encounter a serie of APKs with the same Developer, you can create a Yara rule to know more of them.
+
+## Issuer
+The issuer of a certificate is the person (or entity) that generate the certificate. With the next condition you can match with it:
+
+```
+androguard.certificate.issuer(regex)
+```
+
+## Subject
+The subject of a certificate is the owner of its. To match with this field, you can use:
+
+```
+androguard.certificate.subject(regex)
+```
+
+NOTE: Normally, Issuer and Subject in an APK' certificates are the same, but this is not a norm.
