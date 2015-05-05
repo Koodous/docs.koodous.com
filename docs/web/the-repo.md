@@ -9,7 +9,6 @@ In the repository screen you can search for any APK in the system. Depending of 
 #### Partial match fields
 
 ** App name
-** Package
 ** Developer
 
 #### Exact match fields
@@ -17,10 +16,11 @@ In the repository screen you can search for any APK in the system. Depending of 
 ** SHA256
 ** SHA1
 ** MD5
+** Package
 
-When searching for a particular hash, you must enter _exactly_ the number of characters it has. This means that if you search for a partial hash, like 0bb9246deae4d3210e06791e9999c45 (notice the last character is left), the search engine will look in any partial match field, probably giving you no results at all.
+When searching for a particular hash, you must enter _exactly_ the number of characters it has. This means that if you search for a partial hash, like 0bb9246deae4d3210e06791e9999c45 (notice the last character is left), the search engine will look in any partial match field, probably giving you no results at all. The search engine neither do partial searchs on package names.
 
-At the moment there is no way to tell the search engine what are you looking for. So, if you look for a string, i.e. Rockstar, you will have applications, packages and developers which has this string somewhere in its name. 
+At the moment there is no way to tell the search engine what are you looking for. So, if you look for a string i.e. Rockstar, you will have applications and developers which has this string somewhere in its name. 
 
 ## The detailed view
 
