@@ -6,5 +6,5 @@ Our implementation of Yara is based in the original one, but with some extra mod
 
 ## Basic steps
 
-To start to write Yara rules, you can use the official documentation (http://yara.readthedocs.org/en/v3.3.0/) where the author explains how to write yara rules (http://yara.readthedocs.org/en/v3.3.0/writingrules.html)
+To start to write Yara rules, you can use the official documentation [http://yara.readthedocs.org/en/v3.3.0/](http://yara.readthedocs.org/en/v3.3.0/) where the author explains [how to write yara rules](http://yara.readthedocs.org/en/v3.3.0/writingrules.html).
 
