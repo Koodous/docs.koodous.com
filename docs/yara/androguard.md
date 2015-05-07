@@ -14,6 +14,13 @@ Each Android application has a package name that need to be unique once the appl
 androguard.package_name(regex)
 ```
 
+And match with a string too...
+
+```
+androguard.package_name(string)
+```
+
+
 ```
 rule videogames
 {
@@ -27,10 +34,13 @@ rule videogames
 You can add more restrictions to this rule, like strings, another functions of this module or conditions of another module.
 
 # APP name
-The app name displayed when you install an application in a device could be an indicator of an "anomaly". For this reason, we have an condition to catch this applications.
+The app name displayed when you install an application in a device could be an indicator of an "anomaly". For this reason, we have an condition to catch this applications. You can match with a regex or with a string.
 
 ```
 androguard.app_name(regex)
+```
+```
+androguard.app_name(string)
 ```
 
 ```
