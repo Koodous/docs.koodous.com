@@ -82,6 +82,25 @@ The complete list of the permissions used in the manifest are in the [official A
 # Certificate
 In our website, one of the details of each APK is the "Developer". If you are a malware analyst, you must know that this field is not easy to know, so we use the APK' certificate to extract it. If you encounter a serie of APKs with the same Developer, you can create a Yara rule to know more of them.
 
+## SHA1
+Each certificate has an SHA1 as a part of its signature, and you can match with it! Some malware developers use the same certificate for many samples, and with this condition you can detect them:
+
+```
+androguard.certificate.sha1(string)
+```
+
+**Remember** that you need to match with the complete sha1, not with a part or regex of it.
+
+Example:
+
+```
+rule videogames: adware
+{
+	condition:
+		androguard.certificate.sha1("5C88CB801C4FB3D609B57DCD7CAFC25B35E03AC2")
+}
+```
+
 ## Issuer
 The issuer of a certificate is the person (or entity) that generate the certificate. With the next condition you can match with it:
 
