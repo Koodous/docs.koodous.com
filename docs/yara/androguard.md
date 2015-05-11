@@ -92,7 +92,7 @@ The complete list of the permissions used in the manifest are in the [official A
 # Certificate
 In our website, one of the details of each APK is the "Developer". If you are a malware analyst, you must know that this field is not easy to know, so we use the APK' certificate to extract it. If you encounter a serie of APKs with the same Developer, you can create a Yara rule to know more of them.
 
-## SHA1
+### SHA1
 Each certificate has an SHA1 as a part of its signature, and you can match with it! Some malware developers use the same certificate for many samples, and with this condition you can detect them:
 
 ```
@@ -111,14 +111,14 @@ rule videogames: adware
 }
 ```
 
-## Issuer
+### Issuer
 The issuer of a certificate is the person (or entity) that generate the certificate. With the next condition you can match with it:
 
 ```
 androguard.certificate.issuer(regex)
 ```
 
-## Subject
+### Subject
 The subject of a certificate is the owner of its. To match with this field, you can use:
 
 ```
@@ -126,3 +126,24 @@ androguard.certificate.subject(regex)
 ```
 
 NOTE: Normally, Issuer and Subject in an APK' certificates are the same, but this is not a norm.
+
+# URL
+We perform an static analysis over the APK extracting the **hardcored URLs**. You can do a rule to match with that (using a regex or a string).
+
+```
+androguard.url(regex)
+```
+```
+androguard.url(string)
+```
+
+```
+rule videogames: adware
+{
+	condition:
+		androguard.url(/adurl\.com/) or
+		androguard.url("google.com")
+}
+```
+
+**NOTE**: Remember that if you want to find a point (.) with a regex, you need to escape it with reverse slash. If you don't do that, it can match with any character.
