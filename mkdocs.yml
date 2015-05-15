@@ -12,8 +12,6 @@ pages:
 - ['rest-api/apk-comments.md','REST API', 'APK Comments']
 - ['rest-api/analysts.md','REST API', 'Analysts']
 - ['rest-api/rulesets.md','REST API', 'Rulesets']
-- ['rest-api/notifications.md','REST API', 'Notifications']
-- ['rest-api/activity.md','REST API', 'Activity']
 - ['yara/getting-started.md','Yara', 'Getting started']
 - ['yara/androguard.md','Yara', 'Androguard']
 - ['yara/file.md','Yara', 'File']
