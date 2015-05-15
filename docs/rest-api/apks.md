@@ -107,3 +107,21 @@ Examples:
     ]
 }
 ```
+
+## APK Votes
+```
+Remote Address:koodous.com
+Request URL:https://koodous.com/api/apks/:sha256/votes
+Request Method:POST
+Status Code:201 CREATED
+```
+
+Payload examples:
+
+```json
+{kind: "positive"}
+```
+
+```json
+{kind: "negative"}
+```
