@@ -14,6 +14,13 @@ Each Android application has a package name that need to be unique once the appl
 androguard.package_name(regex)
 ```
 
+And match with a string too...
+
+```
+androguard.package_name(string)
+```
+
+
 ```
 rule videogames
 {
@@ -27,10 +34,13 @@ rule videogames
 You can add more restrictions to this rule, like strings, another functions of this module or conditions of another module.
 
 # APP name
-The app name displayed when you install an application in a device could be an indicator of an "anomaly". For this reason, we have an condition to catch this applications.
+The app name displayed when you install an application in a device could be an indicator of an "anomaly". For this reason, we have an condition to catch this applications. You can match with a regex or with a string.
 
 ```
 androguard.app_name(regex)
+```
+```
+androguard.app_name(string)
 ```
 
 ```
@@ -82,14 +92,33 @@ The complete list of the permissions used in the manifest are in the [official A
 # Certificate
 In our website, one of the details of each APK is the "Developer". If you are a malware analyst, you must know that this field is not easy to know, so we use the APK' certificate to extract it. If you encounter a serie of APKs with the same Developer, you can create a Yara rule to know more of them.
 
-## Issuer
+### SHA1
+Each certificate has an SHA1 as a part of its signature, and you can match with it! Some malware developers use the same certificate for many samples, and with this condition you can detect them:
+
+```
+androguard.certificate.sha1(string)
+```
+
+**Remember** that you need to match with the complete sha1, not with a part or regex of it.
+
+Example:
+
+```
+rule videogames: adware
+{
+	condition:
+		androguard.certificate.sha1("5C88CB801C4FB3D609B57DCD7CAFC25B35E03AC2")
+}
+```
+
+### Issuer
 The issuer of a certificate is the person (or entity) that generate the certificate. With the next condition you can match with it:
 
 ```
 androguard.certificate.issuer(regex)
 ```
 
-## Subject
+### Subject
 The subject of a certificate is the owner of its. To match with this field, you can use:
 
 ```
@@ -97,3 +126,24 @@ androguard.certificate.subject(regex)
 ```
 
 NOTE: Normally, Issuer and Subject in an APK' certificates are the same, but this is not a norm.
+
+# URL
+We perform an static analysis over the APK extracting the **hardcored URLs**. You can do a rule to match with that (using a regex or a string).
+
+```
+androguard.url(regex)
+```
+```
+androguard.url(string)
+```
+
+```
+rule videogames: adware
+{
+	condition:
+		androguard.url(/adurl\.com/) or
+		androguard.url("google.com")
+}
+```
+
+**NOTE**: Remember that if you want to find a point (.) with a regex, you need to escape it with reverse slash. If you don't do that, it can match with any character.
