@@ -87,7 +87,28 @@ rule videogames
 }
 ```
 
-The complete list of the permissions used in the manifest are in the [official Android documentation](http://developer.android.com/reference/android/Manifest.permission.html), but remember that some applications can have its own permissions!
+# Service
+
+The service or services of an application are use to run tasks in background. Many times, the malware use this to downloads configuration files, to send stolen data or another thing, ever in background. In order to detect the applications that use an special or desired service name, you can use this condition. It find in all services of the application and if one of this match with the regular expression or an exact string and then generates a notification.
+
+
+```
+androguard.service(regex)
+```
+```
+androguard.service(string)
+```
+
+And you must use in the conditions section:
+
+```
+rule videogames
+{
+	condition:
+		androguard.service("com.example.SendData") or
+		androguard.service(/receivetoken/)
+}
+```
 
 # Certificate
 In our website, one of the details of each APK is the "Developer". If you are a malware analyst, you must know that this field is not easy to know, so we use the APK' certificate to extract it. If you encounter a serie of APKs with the same Developer, you can create a Yara rule to know more of them.
