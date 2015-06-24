@@ -125,3 +125,83 @@ Payload examples:
 ```json
 {kind: "negative"}
 ```
+
+## Upload APK
+request
+```
+Remote Address:koodous.com
+Request URL:https://koodous.com/api/apks/:sha256/get_upload_url
+Request Method:GET
+Status Code:200 OK
+```
+
+```json
+{
+    "upload_url":"https://lmcn2.koodous.com/upload/JDSS8lPNBQCed8qOy6gu0CmvsheZhYdQDM6UMPa3Oz7uJSbCRbdez0c9DKxoXUf7P0dobSZUiB2njx4f3xjX1Sq6pJM4Q0NwuokwL7glirbF3sSR8wG0BA0NmIP3+H8g"
+}
+```
+request
+```
+Remote Address:koodous.com
+Request URL:':upload_url'
+Request Method:POST
+Status Code:409 OK
+```
+return
+```
+{}
+```
+
+Example
+```python
+import requests
+url_koodous = "https://koodous.com/api/apks/%s/get_upload_url" % ("2419c7f2730ecf8944cd4bbd0f3b3157c62f2c3d1f78f6f29e07b4c818c15487")
+r = requests.get(url=url_koodous, headers={'Authorization': 'Token *****your_token*****'})
+{"upload_url":"https://lmcn2.koodous.com/upload/JDSS8lPNBQCed8qOy6gu0CmvsheZhYdQDM6UMPa3Oz7uJSbCRbdez0c9DKxoXUf7P0dobSZUiB2njx4f3xjX1Sq6pJM4Q0NwuokwL7glirbF3sSR8wG0BA0NmIP3+H8g"}
+j = r.json()
+
+requests.post(url=j['upload_url'], files=files)
+
+
+
+```
+## Download APK
+request
+```
+Remote Address:koodous.com
+Request URL:https://koodous.com/api/apks/:sha256/download
+Request Method:GET
+Status Code:200 OK
+```
+
+```json
+{
+    "download_url":"https://lmcn2.koodous.com/download/JDSS8lPNBQCed8qOy6gu0CmvsheZhYdQDM6UMPa3Oz7uJSbCRbdez0c9DKxoXUf7P0dobSZUiB2njx4f3xjX1Sq6pJM4Q0NwuokwL7glirbF3sSR8wG0BA0NmIP3+H8g"
+}
+```
+request
+```
+Remote Address:koodous.com
+Request URL:https://koodous.com/api/apks/:sha256/download
+Request Method:GET
+Status Code:204 OK
+```
+
+```json
+{}
+```
+Example
+```python
+import requests
+import urllib
+
+url_koodous = "https://koodous.com/api/apks/%s/download" % ("2419c7f2730ecf8944cd4bbd0f3b3157c62f2c3d1f78f6f29e07b4c818c15487")
+r = requests.get(url=url_koodous, headers={'Authorization': 'Token *****your_token*****'})
+
+if r.status_code is 200:
+    j = r.json()
+    testfile = urllib.URLopener()
+    testfile.retrieve(j['download_url'], ffile)
+
+```
+[Check pykoodous.py a python script for manage the API](https://github.com/Koodous/Scripts/blob/master/pykoodous.py).
