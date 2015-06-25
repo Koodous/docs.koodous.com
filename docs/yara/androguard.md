@@ -168,3 +168,74 @@ rule videogames: adware
 ```
 
 **NOTE**: Remember that if you want to find a point (.) with a regex, you need to escape it with reverse slash. If you don't do that, it can match with any character.
+
+#SDK versions
+The AndroidManifest.xml file contains the versions minimum, maximum and target that the application requires, specified with the API number.
+
+The API list is the next:
+
+|Code name|Version|API level|
+|------------|:-------------:|-----|
+|Lollipop|5.0|API level 21|
+|KitKat|4.4 - 4.4.4|API level 19|
+|Jelly Bean|4.3.x|API level 18|
+|Jelly Bean|4.2.x|API level 17|
+|Jelly Bean|4.1.x|API level 16|
+|Ice Cream Sandwich|4.0.3 - 4.0.4|API level 15|
+|Ice Cream Sandwich|4.0.1 - 4.0.2|API level 14|
+|Honeycomb|3.2.x|API level 13|
+|Honeycomb|3.1|API level 12|
+|Honeycomb|3.0|API level 11|
+|Gingerbread|2.3.3 - 2.3.7|API level 10|
+|Gingerbread|2.3 - 2.3.2|API level 9|
+|Froyo|2.2.x|API level 8|
+|Eclair|2.1|API level 7|
+|Eclair|2.0.1|API level 6|
+|Eclair|2.0|API level 5|
+|Donut|1.6|API level 4|
+|Cupcake|1.5|API level 3|
+|(no code name)|1.1|API level 2|
+|(no code name)|1.0|API level 1|
+
+You can see an updated version of this table in its source: [https://source.android.com/source/build-numbers.html](https://source.android.com/source/build-numbers.html)
+
+
+###Min SDK
+Minimum SDK version specifies that, the minimum version of Android require to execute the application. You can filter that using:
+
+```
+rule videogames: adware
+{
+	condition:
+		androguard.min_sdk == 10 or
+		androguard.min_sdk > 10 or
+		androguard.min_sdk <= 20 
+		//It's only an example, don't bother!
+}
+```
+
+###Max SDK
+Maximum SDK specifies the higger version of Android that could run this application:
+
+```
+rule videogames: adware
+{
+	condition:
+		androguard.max_sdk == 18 or
+		androguard.max_sdk > 18 or
+		androguard.max_sdk >= 19 
+}
+```
+
+###Target SDK
+The target version, theorically, specifies in which Android version the application was tested and worked fine.
+
+```
+rule videogames: adware
+{
+	condition:
+		androguard.target_sdk == 14 or
+		androguard.target_sdk > 14 or
+		androguard.target_sdk >= 15 
+}
+```
