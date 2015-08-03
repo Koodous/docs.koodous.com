@@ -49,6 +49,9 @@ The comment system is placed on a tab and is pretty straight-forward: write your
 
 The up and down arrows on the right of the application image let you vote if that specific application is trustworthy or not. Please notice is not about how you like an application, but about how safe you think it is. 
 
+
+Many APKs contain the ![Corrupted](../img/corrupted-tag.png) tag. This only mean that we don't detect a dex file OR a resources file OR a certificate. Many service apps installed on devices by default doesn't have a certificate, for instance, and we consider that it is corrupted.
+
 You can download and send an analysis request using the specific buttons above the app image. 
 
 ### Info tabs

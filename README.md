@@ -1,7 +1,7 @@
 # Koodous Documentation
 Koodous documentations about the website, REST API, Yara, etc...
 
-This project uses [mkdocs](http://www.mkdocs.org/) so you need to installed some dependencies if you 
+This project uses [mkdocs](http://www.mkdocs.org/) so you need to install it some dependencies if you 
 want to run it locally. If you want to know anything else about that project, check it out in its [GitHub repo](https://github.com/mkdocs/mkdocs/).
 
 ## Installation
