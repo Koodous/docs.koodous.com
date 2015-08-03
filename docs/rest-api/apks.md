@@ -22,6 +22,9 @@ This method returns a paginated list of apks
 * **displayed_version** _APP version shown on market_
 * **size** _APP size in bytes_
 * **analyzed** _APK has been analyzed, or not, by koodous system_
+* **trusted** _APK is inside Koodous whitelist_
+* **detected** _APK has been detected by Koodous community_
+* **corrupted** _APK cannot be exectuted correctly_
 
 ## Resource information
 
@@ -47,6 +50,7 @@ Examples:
 
 * **?search** _Text that search using fields **app**, **package_name** and **company**
 * **?analyzed=(True|False)** _Boolean to filter apks analyzed or not_
+* **?detected=(True|False)** _Boolean to filter apks detected or not by koodous community_
 * **?md5** _md5 lookup_
 * **?sha1** _sha1 lookup_
 * **?sha256** _sha256 lookup_
@@ -60,6 +64,8 @@ Examples:
 * Example: `https://koodous.com/api/apks?md5=8fee025ee05aa599a29ef6563b24d027`
 * Example: `https://koodous.com/api/apks?sha1=1d4d60016e4c404886d5a6e624f0cece6d45bc49`
 * Example: `https://koodous.com/api/apks?ordering=created_on`
+
+_**Note:** Our advanced search system can be used in our API as a simple search, check [advanced search section](/web/the-repo/#advanced-search)_
 
 ## Example request
 
@@ -76,6 +82,7 @@ Examples:
             "created_on": 1429629827,
             "rating": 0,
             "image": "https://koodous.com/media/apk_images/tmpYDOLaE",
+            "tags": [],
             "md5": "8fee025ee05aa599a29ef6563b24d027",
             "sha1": "1d4d60016e4c404886d5a6e624f0cece6d45bc49",
             "sha256": "cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544",
@@ -84,7 +91,10 @@ Examples:
             "company": "Hallico Corporation",
             "displayed_version": "1.8",
             "size": 2106565,
-            "analyzed": false,
+            "stored": true,
+            "analyzed": true,
+            "trusted": false,
+            "detected": false,
             "corrupted": false,
             "repo": ""
         },
@@ -92,6 +102,7 @@ Examples:
             "created_on": 1429629826,
             "rating": 0,
             "image": "https://koodous.com/media/apk_images/tmphKmwA2",
+            "tags": [],
             "md5": "795ec6217530a3531c66f3bb99d40802",
             "sha1": "9eca8b3a3c03542ef890b9074dc09430bf736068",
             "sha256": "249c7fe2730ecf8944cd4bbd0f3b3157c62f2c3d1f78f6f29e07b4c818c15487",
@@ -100,108 +111,13 @@ Examples:
             "company": "qmnu",
             "displayed_version": "7.8.0",
             "size": 2337458,
-            "analyzed": false,
+            "stored": true,
+            "analyzed": true,
+            "trusted": false,
+            "detected": false,
             "corrupted": false,
             "repo": ""
-        }
+        },
     ]
 }
 ```
-
-## APK Votes
-```
-Remote Address:koodous.com
-Request URL:https://koodous.com/api/apks/:sha256/votes
-Request Method:POST
-Status Code:201 CREATED
-```
-
-Payload examples:
-
-```json
-{kind: "positive"}
-```
-
-```json
-{kind: "negative"}
-```
-
-## Upload APK
-request
-```
-Remote Address:koodous.com
-Request URL:https://koodous.com/api/apks/:sha256/get_upload_url
-Request Method:GET
-Status Code:200 OK
-```
-
-```json
-{
-    "upload_url":"https://lmcn2.koodous.com/upload/JDSS8lPNBQCed8qOy6gu0CmvsheZhYdQDM6UMPa3Oz7uJSbCRbdez0c9DKxoXUf7P0dobSZUiB2njx4f3xjX1Sq6pJM4Q0NwuokwL7glirbF3sSR8wG0BA0NmIP3+H8g"
-}
-```
-request
-```
-Remote Address:koodous.com
-Request URL:':upload_url'
-Request Method:POST
-Status Code:409 OK
-```
-return
-```
-{}
-```
-
-Example
-```python
-import requests
-url_koodous = "https://koodous.com/api/apks/%s/get_upload_url" % ("2419c7f2730ecf8944cd4bbd0f3b3157c62f2c3d1f78f6f29e07b4c818c15487")
-r = requests.get(url=url_koodous, headers={'Authorization': 'Token *****your_token*****'})
-{"upload_url":"https://lmcn2.koodous.com/upload/JDSS8lPNBQCed8qOy6gu0CmvsheZhYdQDM6UMPa3Oz7uJSbCRbdez0c9DKxoXUf7P0dobSZUiB2njx4f3xjX1Sq6pJM4Q0NwuokwL7glirbF3sSR8wG0BA0NmIP3+H8g"}
-j = r.json()
-
-requests.post(url=j['upload_url'], files=files)
-
-
-
-```
-## Download APK
-request
-```
-Remote Address:koodous.com
-Request URL:https://koodous.com/api/apks/:sha256/download
-Request Method:GET
-Status Code:200 OK
-```
-
-```json
-{
-    "download_url":"https://lmcn2.koodous.com/download/JDSS8lPNBQCed8qOy6gu0CmvsheZhYdQDM6UMPa3Oz7uJSbCRbdez0c9DKxoXUf7P0dobSZUiB2njx4f3xjX1Sq6pJM4Q0NwuokwL7glirbF3sSR8wG0BA0NmIP3+H8g"
-}
-```
-request
-```
-Remote Address:koodous.com
-Request URL:https://koodous.com/api/apks/:sha256/download
-Request Method:GET
-Status Code:204 OK
-```
-
-```json
-{}
-```
-Example
-```python
-import requests
-import urllib
-
-url_koodous = "https://koodous.com/api/apks/%s/download" % ("2419c7f2730ecf8944cd4bbd0f3b3157c62f2c3d1f78f6f29e07b4c818c15487")
-r = requests.get(url=url_koodous, headers={'Authorization': 'Token *****your_token*****'})
-
-if r.status_code is 200:
-    j = r.json()
-    testfile = urllib.URLopener()
-    testfile.retrieve(j['download_url'], ffile)
-
-```
-[Check pykoodous.py a python script for manage the API](https://github.com/Koodous/Scripts/blob/master/pykoodous.py).

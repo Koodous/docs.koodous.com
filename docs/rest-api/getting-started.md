@@ -4,8 +4,8 @@ The Koodous public REST API gives you the chance to create your koodo client for
 
 ## Creating an account
 
-You need a token to access our API. Just create your account on [koodous.com](http://koodous.com) and check 
-your user page to get your access token.
+You need a token to access our API. Just create your account on koodous and check 
+your [user settings page](//koodous.com/settings/profile) to get your access token.
 
 ## Authentication
 
@@ -69,3 +69,9 @@ r.status_code
 r.json()
 #JSON response
 ```
+
+## Python API Class
+
+There is a python example class with almost all Koodous API methods, check it out:
+
+[pykoodous.py](https://github.com/Koodous/Scripts/blob/master/pykoodous.py)
