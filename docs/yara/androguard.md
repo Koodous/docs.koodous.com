@@ -66,7 +66,7 @@ rule videogames
 }
 ```
 
-Of course, this filter does not indicate that the application send SMSs, but maybe receive o use an screen to send some type of SMS.
+Of course, this filter does not indicate that the application send SMSs, but maybe receive or use an screen to send some type of SMS.
 
 # Permissions
 
@@ -84,6 +84,17 @@ rule videogames
 {
 	condition:
 		androguard.permission(/RESTART_PACKAGES/)
+}
+```
+
+## Permissions number
+Some applications with a huge number of permissions could be malware and this variable could help you to detect them.
+
+```
+rule videogames
+{
+	condition:
+		androguard.permissions_number > 5
 }
 ```
 
