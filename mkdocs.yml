@@ -4,14 +4,33 @@ google_analytics: ['UA-62062848-2', 'docs.koodous.com']
 strict: true
 theme: readthedocs
 pages:
+
+#Home
 - ['index.md', 'Home']
+
+#The Koodous Web
 - ['web/getting-started.md','The Koodous web', 'Getting started']
 - ['web/the-repo.md','The Koodous web', 'The repository']
+# - ['web/dashboard.md','The Koodous web', 'Dashboard']
+# - ['web/community_rulesets.md','The Koodous web', 'Community Rulesets']
+# - ['web/your_rulesets.md','The Koodous web', 'Your Rulesets']
+# - ['web/apks.md','The Koodous web', 'APKs']
+# - ['web/notifications.md','The Koodous web', 'Notifications']
+
+#REST API
 - ['rest-api/getting-started.md','REST API', 'Getting started']
 - ['rest-api/apks.md','REST API', 'APKs']
 - ['rest-api/apk-comments.md','REST API', 'APK Comments']
+- ['rest-api/apk-votes.md','REST API', 'APK Votes']
+- ['rest-api/apk-download.md','REST API', 'APK Download']
+- ['rest-api/apk-upload.md','REST API', 'APK Upload']
 - ['rest-api/analysts.md','REST API', 'Analysts']
-- ['rest-api/rulesets.md','REST API', 'Rulesets']
+- ['rest-api/user_rulesets.md','REST API', 'Your Rulesets']
+- ['rest-api/public_rulesets.md','REST API', 'Public Rulesets']
+- ['rest-api/public_rulesets_votes.md','REST API', 'Public Rulesets Votes']
+- ['rest-api/public_rulesets_comments.md','REST API', 'Public Rulesets Comments']
+
+#Yara
 - ['yara/getting-started.md','Yara', 'Getting started']
 - ['yara/androguard.md','Yara', 'Androguard']
 - ['yara/droidbox.md','Yara', 'Droidbox']
