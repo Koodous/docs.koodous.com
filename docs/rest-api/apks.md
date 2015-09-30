@@ -26,13 +26,7 @@ This method returns a paginated list of apks
 * **detected** _APK has been detected by Koodous community_
 * **corrupted** _APK cannot be exectuted correctly_
 
-## Resource information
 
-| | |
-| ------------- |:-------------:|
-| **Response formats** | JSON |
-| **Requires authentication** | Yes |
-| **Requests per minute** | 60|
 
 ## Parameters
 
