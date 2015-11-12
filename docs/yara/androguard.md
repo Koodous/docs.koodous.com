@@ -54,8 +54,8 @@ rule videogames
 ```
 
 
-# Activity
-The activities is an esential part of the Android applications. They define the "screens" of an application and its logic, so, with the name of that, you can filter some applications. In the next example, we are going to filter applications which the name one of its activity is sms, with a point after and before of that word:
+# Activities
+The activities is an esential part of the Android applications. They define the "screens" of an application and its logic, so, with the name of that, you can filter some applications. In the next example, we are going to filter applications which the name one of its activity is sms, with a point after and before of that word.
 
 It accepts two formats, with string and with regular expression:
 ```
@@ -64,6 +64,7 @@ androguard.activity(string)
 ```
 androguard.activity(regex)
 ```
+
 And you must use in the conditions section:
 ```
 rule sendSMS
@@ -75,6 +76,25 @@ rule sendSMS
 ```
 
 Of course, this filter does not indicate that the application send SMSs, but maybe receive or use an screen to send some type of SMS.
+
+# Receivers
+To find applications with certain receivers you could use this to match:
+```
+androguard.receiver(string)
+```
+```
+androguard.receiver(regex)
+```
+
+And in a rule, inside condition:
+```
+rule sendSMS
+{
+	condition:
+		androguard.receiver("com.airpush.android.DeliveryReceiver") or
+		androguard.receiver(/smsreceiver/i)
+}
+```
 
 # Permissions
 
@@ -106,7 +126,7 @@ rule videogames
 }
 ```
 
-# Service
+# Services
 
 The service or services of an application are use to run tasks in background. Many times, the malware use this to downloads configuration files, to send stolen data or another thing, ever in background. In order to detect the applications that use an special or desired service name, you can use this condition. It find in all services of the application and if one of this match with the regular expression or an exact string and then generates a notification.
 
