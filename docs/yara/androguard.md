@@ -167,7 +167,9 @@ Example:
 rule videogames: adware
 {
 	condition:
-		androguard.certificate.sha1("5C88CB801C4FB3D609B57DCD7CAFC25B35E03AC2")
+		androguard.certificate.sha1("5C88CB801C4FB3D609B57DCD7CAFC25B35E03AC2") or
+		androguard.certificate.sha1("9E:E0:B6:FD:D1:DC:0A:2B:0C:6B:22:EB:C9:38:4C:A0:DD:05:12:D5")
+		/* Note that accepts two syntax, with and without colons */
 }
 ```
 
