@@ -31,14 +31,12 @@ This method returns a paginated list of apks
 ## Parameters
 
 * **:sha256** _sha256 lookup_
-* **?page** _Specify page of current results_
-* **?page_size** _Number of elements per page_
+* **?cursor** _Specify cursor of current results_
 
 Examples:
 
 * `https://koodous.com/api/apks/cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544`
-* `https://koodous.com/api/apks?page=1&page_size=5`
-* `https://koodous.com/api/apks?page=3&page_size=25`
+* `https://koodous.com/api/apks?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D`
 
 ## Search, filters and ordering
 
@@ -48,7 +46,6 @@ Examples:
 * **?md5** _md5 lookup_
 * **?sha1** _sha1 lookup_
 * **?sha256** _sha256 lookup_
-* **?ordering=(created_on, -created_on)** _Timestamp creation date order (desc. or asc.)_
 
 
 Examples:
@@ -57,19 +54,17 @@ Examples:
 * Example: `https://koodous.com/api/apks?analyzed=True`
 * Example: `https://koodous.com/api/apks?md5=8fee025ee05aa599a29ef6563b24d027`
 * Example: `https://koodous.com/api/apks?sha1=1d4d60016e4c404886d5a6e624f0cece6d45bc49`
-* Example: `https://koodous.com/api/apks?ordering=created_on`
 
 _**Note:** Our advanced search system can be used in our API as a simple search, check [advanced search section](/web/the-repo/#advanced-search)_
 
 ## Example request
 
-`https://koodous.com/api/apks?page_size=2`
+`https://koodous.com/api/apks?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D`
 
 ## Example result
 ```json
 {
-    "count": 2175933,
-    "next": "https://koodous.com/api/apks?page=2&page_size=2",
+    "next": "https://koodous.com/api/apks?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D",
     "previous": null,
     "results": [
         {

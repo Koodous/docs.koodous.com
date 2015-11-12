@@ -26,14 +26,13 @@ Method to list apk comments with pagination
 ## Parameters
 
 * **:sha256** _sha256 lookup (**Required**)_
-* **?page** _Specify page of current results_
+* **?cursor** _Specify cursor of current results_
 * **?page_size** _A value of users votes_
 
 Examples:
 
 * `https://koodous.com/api/apks/cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544/comments`
-* `https://koodous.com/api/apks/cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544/comments?page=1&page_size=5`
-* `https://koodous.com/api/apks/cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544/comments?page=3&page_size=25`
+* `https://koodous.com/api/apks/cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544/comments?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D`
 
 ## Example request
 
@@ -42,8 +41,7 @@ Examples:
 ## Example result
 ```json
 {
-    "count": 1,
-    "next": null,
+    "next": "https://koodous.com/api/apks?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D",
     "previous": null,
     "results": [
         {

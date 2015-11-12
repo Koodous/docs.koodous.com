@@ -32,8 +32,7 @@ Method to list rulesets comments with pagination
 Examples:
 
 * `https://koodous.com/api/public_rulesets/123/comments`
-* `https://koodous.com/api/public_rulesets/123/comments?page=1&page_size=5`
-* `https://koodous.com/api/public_rulesets/123/comments?page=3&page_size=25`
+* `https://koodous.com/api/public_rulesets/123/comments?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D`
 
 ## Example request
 
