@@ -57,12 +57,20 @@ rule videogames
 # Activity
 The activities is an esential part of the Android applications. They define the "screens" of an application and its logic, so, with the name of that, you can filter some applications. In the next example, we are going to filter applications which the name one of its activity is sms, with a point after and before of that word:
 
-
+It accepts two formats, with string and with regular expression:
 ```
-rule videogames
+androguard.activity(string)
+```
+```
+androguard.activity(regex)
+```
+And you must use in the conditions section:
+```
+rule sendSMS
 {
 	condition:
-		androguard.activity(/\.sms\./)
+		androguard.activity(/\.sms\./) or
+		androguard.activity("com.package.name.sendSMS")
 }
 ```
 
