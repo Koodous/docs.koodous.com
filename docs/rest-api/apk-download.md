@@ -4,7 +4,7 @@ Method to get a download url of an especific sample.
 
 ## Resource url/s
 
-* `https://koodous.com/api/apks/:sha256/download`
+* `https://api.koodous.com/apks/:sha256/download`
 
 ## Resource information
 
@@ -20,7 +20,7 @@ Method to get a download url of an especific sample.
 
 ## Example request
 
-`https://koodous.com/api/apks/cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544/download`
+`https://api.koodous.com/apks/cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544/download`
 
 ## Example result
 ```json
@@ -39,7 +39,7 @@ import urllib
 
 sha256 = "2419c7f2730ecf8944cd4bbd0f3b3157c62f2c3d1f78f6f29e07b4c818c15487"
 
-url_koodous = "https://koodous.com/api/apks/%s/download" % sha256
+url_koodous = "https://api.koodous.com/apks/%s/download" % sha256
 r = requests.get(url=url_koodous, headers={'Authorization': 'Token *****your_token*****'})
 
 if r.status_code is 200:

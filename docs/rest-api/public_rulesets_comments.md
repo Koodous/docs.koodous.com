@@ -4,7 +4,7 @@ Method to list rulesets comments with pagination
 
 ## Resource url/s
 
-* `https://koodous.com/api/public_rulesets/:id/comments`
+* `https://api.koodous.com/public_rulesets/:id/comments`
 
 ## Object details
 
@@ -31,12 +31,12 @@ Method to list rulesets comments with pagination
 
 Examples:
 
-* `https://koodous.com/api/public_rulesets/123/comments`
-* `https://koodous.com/api/public_rulesets/123/comments?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D`
+* `https://api.koodous.com/public_rulesets/123/comments`
+* `https://api.koodous.com/public_rulesets/123/comments?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D`
 
 ## Example request
 
-`https://koodous.com/api/public_rulesets/123/comments`
+`https://api.koodous.com/public_rulesets/123/comments`
 
 ## Example result
 ```json
@@ -77,10 +77,10 @@ Examples:
 Comment creation can be done with the next request:
 
 ```
-Remote Address:koodous.com
-Request URL:https://koodous.com/api/public_rulesets/:id/comments
-Request Method:POST
-Status Code:201 CREATED
+Remote Address: koodous.com
+Request URL: https://api.koodous.com/public_rulesets/:id/comments
+Request Method: POST
+Status Code: 201 CREATED
 ```
 
 Payload should looks like following:
@@ -94,8 +94,8 @@ Payload should looks like following:
 A comment can be delete if the authenticated user is the owner. The request should looks like following:
 
 ```
-Remote Address:koodous.com
-Request URL:https://koodous.com/api/public_rulesets/:id/comments/:id
-Request Method:DELETE
-Status Code:204 NO CONTENT
+Remote Address: koodous.com
+Request URL: https://api.koodous.com/public_rulesets/:id/comments/:id
+Request Method: DELETE
+Status Code: 204 NO CONTENT
 ```

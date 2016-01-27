@@ -2,8 +2,8 @@
 
 ## Resource url/s
 
-* `https://koodous.com/api/user_rulesets`
-* `https://koodous.com/api/user_rulesets/:id`
+* `https://api.koodous.com/user_rulesets`
+* `https://api.koodous.com/user_rulesets/:id`
 
 ## Object details
 
@@ -34,12 +34,12 @@
 
 Examples:
 
-* `https://koodous.com/api/user_rulesets`
-* `https://koodous.com/api/user_rulesets?page=1&page_size=10&active=True&privacy=public&ordering=-modified_on`
+* `https://api.koodous.com/user_rulesets`
+* `https://api.koodous.com/user_rulesets?page=1&page_size=10&active=True&privacy=public&ordering=-modified_on`
 
 ## Example request
 
-`https://koodous.com/api/user_rulesets?page=1&page_size=10&active=True&privacy=public&ordering=-modified_on`
+`https://api.koodous.com/user_rulesets?page=1&page_size=10&active=True&privacy=public&ordering=-modified_on`
 
 ## Example result
 ```json
@@ -69,7 +69,7 @@ Examples:
 ## Ruleset creation
 ```
 Remote Address:koodous.com
-Request URL:https://koodous.com/api/user_rulesets
+Request URL:https://api.koodous.com/user_rulesets
 Request Method:POST
 Status Code:201 CREATED
 ```
@@ -83,7 +83,7 @@ Payload example:
 ## Ruleset Update
 ```
 Remote Address:koodous.com
-Request URL:https://koodous.com/api/user_rulesets/:id
+Request URL:https://api.koodous.com/user_rulesets/:id
 Request Method:PATCH
 Status Code:200 OK
 ```
@@ -98,7 +98,7 @@ Payload example:
 
 ```
 Remote Address:koodous.com
-Request URL:https://koodous.com/api/user_rulesets/:id
+Request URL:https://api.koodous.com/user_rulesets/:id
 Request Method:DELETE
 Status Code:204 NO CONTENT
 ```

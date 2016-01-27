@@ -12,7 +12,7 @@ your [user settings page](//koodous.com/settings/profile) to get your access tok
 Almost every request need to specify your user token using `Authorization` header. A request with token `c080ddd1fab46bc919ca0d62299e9995b1886853` should looks like follows:
 
 ```
-GET /api/apks
+GET /apks
 Authorization: Token c080ddd1fab46bc919ca0d62299e9995b1886853
 ```
 
@@ -23,7 +23,7 @@ Responses format are json. The example response of the last request will looks l
 ```
 {
     "count": 12312,
-    "next": "https://koodous.com/api/apks?cursor=cD0yMDE2LTAxLTEzKzEwJTNBMzYlM0EwNyUyQjAwJTNBMDA%3D",
+    "next": "https://api.koodous.com/apks?cursor=cD0yMDE2LTAxLTEzKzEwJTNBMzYlM0EwNyUyQjAwJTNBMDA%3D",
     "previous": null,
     "results": [
         {
@@ -70,7 +70,7 @@ Here you have an example using python and [requests library](http://docs.python-
 ```python
 import requests
 
-url = "https://koodous.com/api/apks"
+url = "https://api.koodous.com/apks"
 headers = {"Authorization":"Token c080ddd1fab46fc919ca0d62299e9995b1886853"}
 r = requests.get(url=url, headers=headers)
 
