@@ -58,7 +58,7 @@ Responses format are json. The example response of the last request will looks l
 Depending on your API level, you can have different limits when interacting with the Koodous API.
 
 | Range | Basic | Bronze | Silver | Gold |
-| - |:-:|:-:|:-:|:-:|
+| :---: |:---:|:---:|:---:|:---:|
 | **APK downloads** | 50/day | 100/day | 250/day | 500/day |
 | **Analysis requests**| 50/day | 100/day | 100/day | 100/day |
 
