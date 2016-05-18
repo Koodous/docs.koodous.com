@@ -1,6 +1,6 @@
 # Introduction
 
-Droidbox is a tool to perform a dynamic analysis of Android applications. With this module developed to used with Yara, you can match applications by several criteria based on the dynamic analysis.
+Droidbox is a tool to perform a dynamic analysis of Android applications. With this module developed to be used with Yara, you can match applications by several criteria based on the dynamic analysis.
 
 First of all, you need to import the module with the next directive at the header of the ruleset.
 
