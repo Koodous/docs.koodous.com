@@ -4,7 +4,7 @@ Method to list votes or vote a ruleset.
 
 ## Resource url/s
 
-* `https://koodous.com/api/public_rulesets/:id/votes`
+* `https://api.koodous.com/public_rulesets/:id/votes`
 
 ## Object details
 
@@ -62,7 +62,7 @@ Method to list votes or vote a ruleset.
 
 ```
 Remote Address:koodous.com
-Request URL:https://koodous.com/api/public_rulesets/:id/votes
+Request URL:https://api.koodous.com/public_rulesets/:id/votes
 Request Method:POST
 Status Code:201 CREATED
 ```

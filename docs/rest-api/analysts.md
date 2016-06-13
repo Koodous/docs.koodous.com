@@ -4,8 +4,8 @@ Method to list koodous's analysts
 
 ## Resource url/s
 
-* `https://koodous.com/api/analysts`
-* `https://koodous.com/api/analysts/:username`
+* `https://api.koodous.com/analysts`
+* `https://api.koodous.com/analysts/:username`
 
 ## Object details
 
@@ -39,12 +39,12 @@ Method to list koodous's analysts
 
 Examples:
 
-* `https://koodous.com/api/analysts?page=1&page_size=5`
-* `https://koodous.com/api/analysts/user1`
+* `https://api.koodous.com/analysts?page=1&page_size=5`
+* `https://api.koodous.com/analysts/user1`
 
 ## Example request
 
-`https://koodous.com/api/apks/analysts`
+`https://api.koodous.com/apks/analysts`
 
 ## Example result
 ```json
@@ -77,10 +77,10 @@ Examples:
 An analyst can edit his profile information with the next example request:
 
 ```
-Remote Address:koodous.com
-Request URL:https://koodous.com/api/analysts/user1
-Request Method:PATCH
-Status Code:200 OK
+Remote Address: koodous.com
+Request URL: https://api.koodous.com/analysts/user1
+Request Method: PATCH
+Status Code: 200 OK
 ```
 
 Payload and response should looks like following:
@@ -94,12 +94,12 @@ Payload and response should looks like following:
 
 ## Analyst extra methods
 
-Analyst related info can be accesed from `/api/analysts/:username`.
+Analyst related info can be accesed from `/analysts/:username`.
 
-* GET `/api/analysts/:username/followers` Analysts list following requested username
-* GET `/api/analysts/:username/following` Analysts list followed by requested username
-* GET `/api/analysts/:username/comments` Comments written by requested username
-* GET `/api/analysts/:username/activity` Requested username activity
-* GET `/api/analysts/:username/rulesets` Public rulesets of requested username
-* GET `/api/analysts/:username/follow` Start following analyst
-* GET `/api/analysts/:username/unfollow` Stop following analyst
+* GET `/analysts/:username/followers` Analysts list following requested username
+* GET `/analysts/:username/following` Analysts list followed by requested username
+* GET `/analysts/:username/comments` Comments written by requested username
+* GET `/analysts/:username/activity` Requested username activity
+* GET `/analysts/:username/rulesets` Public rulesets of requested username
+* GET `/analysts/:username/follow` Start following analyst
+* GET `/analysts/:username/unfollow` Stop following analyst

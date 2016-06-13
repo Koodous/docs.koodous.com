@@ -4,8 +4,8 @@ This method returns a paginated list of apks
 
 ## Resource url/s
 
-* `https://koodous.com/api/apks`
-* `https://koodous.com/api/apks/:sha256`
+* `https://api.koodous.com/apks`
+* `https://api.koodous.com/apks/:sha256`
 
 
 ## Object details
@@ -35,8 +35,8 @@ This method returns a paginated list of apks
 
 Examples:
 
-* `https://koodous.com/api/apks/cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544`
-* `https://koodous.com/api/apks?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D`
+* `https://api.koodous.com/apks/cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544`
+* `https://api.koodous.com/apks?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D`
 
 ## Search, filters and ordering
 
@@ -50,21 +50,21 @@ Examples:
 
 Examples:
 
-* Example: `https://koodous.com/api/apks?search=Facebook`
-* Example: `https://koodous.com/api/apks?analyzed=True`
-* Example: `https://koodous.com/api/apks?md5=8fee025ee05aa599a29ef6563b24d027`
-* Example: `https://koodous.com/api/apks?sha1=1d4d60016e4c404886d5a6e624f0cece6d45bc49`
+* Example: `https://api.koodous.com/apks?search=Facebook`
+* Example: `https://api.koodous.com/apks?analyzed=True`
+* Example: `https://api.koodous.com/apks?md5=8fee025ee05aa599a29ef6563b24d027`
+* Example: `https://api.koodous.com/apks?sha1=1d4d60016e4c404886d5a6e624f0cece6d45bc49`
 
 _**Note:** Our advanced search system can be used in our API as a simple search, check [advanced search section](/web/the-repo/#advanced-search)_
 
 ## Example request
 
-`https://koodous.com/api/apks?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D`
+`https://api.koodous.com/apks?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D`
 
 ## Example result
 ```json
 {
-    "next": "https://koodous.com/api/apks?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D",
+    "next": "https://api.koodous.com/apks?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D",
     "previous": null,
     "results": [
         {

@@ -1,6 +1,6 @@
 # Koodous Documentation
 
-Koodous is a collaborative platform that combines the power of online analysis tools with social interactions between the analysts over a vast APKs repository.
+Koodous is a collaborative platform for Android malware research that combines the power of online analysis tools with social interactions between the analysts over a vast APK repository.
 
 ![Koodous Diagram](img/koodous-diagram.png)
 

@@ -2,8 +2,8 @@
 
 ## Resource url/s
 
-* `https://koodous.com/api/public_rulesets`
-* `https://koodous.com/api/public_rulesets/:id`
+* `https://api.koodous.com/public_rulesets`
+* `https://api.koodous.com/public_rulesets/:id`
 
 ## Object details
 
@@ -34,12 +34,12 @@
 
 Examples:
 
-* `https://koodous.com/api/public_rulesets`
-* `https://koodous.com/api/public_rulesets?page=1&page_size=10&active=True&privacy=public&ordering=-modified_on`
+* `https://api.koodous.com/public_rulesets`
+* `https://api.koodous.com/public_rulesets?page=1&page_size=10&active=True&privacy=public&ordering=-modified_on`
 
 ## Example request
 
-`https://koodous.com/api/public_rulesets?page=1&page_size=10&active=True&privacy=public&ordering=-modified_on`
+`https://api.koodous.com/public_rulesets?page=1&page_size=10&active=True&privacy=public&ordering=-modified_on`
 
 ## Example result
 ```json
@@ -68,10 +68,10 @@ Examples:
 
 ## Ruleset creation
 ```
-Remote Address:koodous.com
-Request URL:https://koodous.com/api/public_rulesets
-Request Method:POST
-Status Code:201 CREATED
+Remote Address: koodous.com
+Request URL: https://api.koodous.com/public_rulesets
+Request Method: POST
+Status Code: 201 CREATED
 ```
 
 Payload example:
@@ -82,10 +82,10 @@ Payload example:
 
 ## Ruleset Update
 ```
-Remote Address:koodous.com
-Request URL:https://koodous.com/api/public_rulesets/:id
-Request Method:PATCH
-Status Code:200 OK
+Remote Address: koodous.com
+Request URL: https://api.koodous.com/public_rulesets/:id
+Request Method: PATCH
+Status Code: 200 OK
 ```
 
 Payload example:
@@ -97,8 +97,8 @@ Payload example:
 ## Ruleset deletion
 
 ```
-Remote Address:koodous.com
-Request URL:https://koodous.com/api/public_rulesets/:id
-Request Method:DELETE
-Status Code:204 NO CONTENT
+Remote Address: koodous.com
+Request URL: https://api.koodous.com/public_rulesets/:id
+Request Method: DELETE
+Status Code: 204 NO CONTENT
 ```

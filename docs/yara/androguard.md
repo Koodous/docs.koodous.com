@@ -1,6 +1,6 @@
 # Introduction
 
-Androguard is a tool to make a static analysis of Android applications. With this module developed to used with Yara, you can match applications by several criteria based on the static analysis.
+Androguard is a tool to make a static analysis of Android applications. With this module developed to be used with Yara, you can match applications by several criteria based on the static analysis.
 
 First of all, you need to import the module with the next directive at the header of the ruleset.
 

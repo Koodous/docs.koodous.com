@@ -4,7 +4,7 @@ Method to list apk comments with pagination
 
 ## Resource url/s
 
-* `https://koodous.com/api/apks/:sha256/comments`
+* `https://api.koodous.com/apks/:sha256/comments`
 
 ## Object details
 
@@ -31,17 +31,17 @@ Method to list apk comments with pagination
 
 Examples:
 
-* `https://koodous.com/api/apks/cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544/comments`
-* `https://koodous.com/api/apks/cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544/comments?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D`
+* `https://api.koodous.com/apks/cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544/comments`
+* `https://api.koodous.com/apks/cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544/comments?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D`
 
 ## Example request
 
-`https://koodous.com/api/apks/cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544/comments`
+`https://api.koodous.com/apks/cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544/comments`
 
 ## Example result
 ```json
 {
-    "next": "https://koodous.com/api/apks?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D",
+    "next": "https://api.koodous.com/apks?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D",
     "previous": null,
     "results": [
         {
@@ -76,10 +76,10 @@ Examples:
 Comment creation can be done with the next request:
 
 ```
-Remote Address:koodous.com
-Request URL:https://koodous.com/api/apks/:sha256/comments
-Request Method:POST
-Status Code:201 CREATED
+Remote Address: koodous.com
+Request URL: https://api.koodous.com/apks/:sha256/comments
+Request Method: POST
+Status Code: 201 CREATED
 ```
 
 Payload should looks like following:
@@ -93,8 +93,8 @@ Payload should looks like following:
 A comment can be delete if the authenticated user is the owner. The request should looks like following:
 
 ```
-Remote Address:koodous.com
-Request URL:https://koodous.com/api/apks/:sha256/comments/:id
-Request Method:DELETE
-Status Code:204 NO CONTENT
+Remote Address: koodous.com
+Request URL: https://api.koodous.com/apks/:sha256/comments/:id
+Request Method: DELETE
+Status Code: 204 NO CONTENT
 ```
