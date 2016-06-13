@@ -17,11 +17,18 @@ pages:
 
 - REST API:
   - Getting started: 'rest-api/getting-started.md'
+
+- REST API (most used methods):
   - APKs: 'rest-api/apks.md'
-  - APK Comments: 'rest-api/apk-comments.md'
-  - APK Votes: 'rest-api/apk-votes.md'
   - APK Download: 'rest-api/apk-download.md'
   - APK Upload: 'rest-api/apk-upload.md'
+  - APK Analysis: 'rest-api/apk-analysis.md'
+  - APKs feed: 'feed/apks.md'
+  - Analyses feed: 'feed/analyses.md'
+
+- REST API (misc methods):
+  - APK Comments: 'rest-api/apk-comments.md'
+  - APK Votes: 'rest-api/apk-votes.md'
   - Analysts: 'rest-api/analysts.md'
   - Your Rulesets: 'rest-api/user_rulesets.md'
   - Public Rulesets: 'rest-api/public_rulesets.md'

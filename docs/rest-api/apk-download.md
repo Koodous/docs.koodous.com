@@ -6,14 +6,6 @@ Method to get a download url of an especific sample.
 
 * `https://api.koodous.com/apks/:sha256/download`
 
-## Resource information
-
-| | |
-| ------------- |:-------------:|
-| **Response formats** | JSON |
-| **Requires authentication** | Yes |
-| **Requests per day** | 50|
-
 ## Parameters
 
 * **:sha256** _sha256 lookup (**Required**)_

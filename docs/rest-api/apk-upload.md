@@ -6,14 +6,6 @@ Method to get an upload url for an especific sample.
 
 * `https://api.koodous.com/apks/:sha256/get_upload_url`
 
-## Resource information
-
-| | |
-| ------------- |:-------------:|
-| **Response formats** | JSON |
-| **Requires authentication** | Yes |
-| **Requests per minute** | 60|
-
 ## Parameters
 
 * **:sha256** _sha256 lookup (**Required**)_

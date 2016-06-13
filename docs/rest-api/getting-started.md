@@ -4,12 +4,15 @@ The Koodous public REST API gives you the chance to create your koodo client for
 
 ## Creating an account
 
-You need a token to access our API. Just create your account on koodous and check 
+You can use our API without any authentication token. However there are some requests that need
+an user token to be done (vote or comment and apk are examples of that kind of requests).
+
+To get your API token just create your account on koodous and check 
 your [user settings page](//koodous.com/settings/profile) to get your access token.
 
 ## Authentication
 
-Almost every request need to specify your user token using `Authorization` header. A request with token `c080ddd1fab46bc919ca0d62299e9995b1886853` should looks like follows:
+To use the requests that need authentication you need to specify your user token using `Authorization` header. A request with token `c080ddd1fab46bc919ca0d62299e9995b1886853` should looks like follows:
 
 ```
 GET /apks

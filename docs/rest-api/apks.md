@@ -110,3 +110,34 @@ _**Note:** Our advanced search system can be used in our API as a simple search,
     ]
 }
 ```
+
+## Python examples
+
+A basic APK list request.
+
+```python
+import requests
+r = requests.get(url="https://api.koodous.com/apks")
+r.json()
+# {"next":"https://api.koodous.com/apks?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D", "previous": null, "results": [...
+```
+
+An APK search request
+
+```python
+import requests
+params = {'search':'Whatsapp'}
+r = requests.get(url="https://api.koodous.com/apks", params=params)
+r.json()
+# {"next":"https://api.koodous.com/apks?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D", "previous": null, "results": [...
+```
+
+An APK detail
+
+```python
+import requests
+sha256 = "cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544"
+r = requests.get(url="https://api.koodous.com/apks/%s" % sha256)
+r.json()
+#{"created_on":1429629827,"rating":0,"image":"https://cdn1.koodous.com/apk_images/2015/4/21/tmpYDOLaE","tags":[],"md5":"8fee025ee05aa599a29ef6563b24d027"...
+```
