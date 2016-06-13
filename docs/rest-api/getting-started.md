@@ -1,6 +1,6 @@
 #Getting started
 
-The Koodous public REST API gives you the chance to create your koodo client for different platforms.
+The Koodous public REST API gives you the chance to create your Koodous client for different platforms.
 
 ## Creating an account
 
