@@ -149,6 +149,30 @@ rule videogames
 }
 ```
 
+
+# Filters
+
+Filters of an application are use to detect broadcast of the itself or other apps. 
+
+```
+androguard.filter(regex)
+```
+```
+androguard.filter(string)
+```
+
+And you must use in the conditions section:
+
+```
+rule videogames
+{
+	condition:
+		androguard.filter("android.provider.Telephony.SMS_DELIVER")or
+		androguard.filter(/PACKAGE_ADDED/)
+}
+```
+
+
 # Certificate
 In our website, one of the details of each APK is the "Developer". If you are a malware analyst, you must know that this field is not easy to know, so we use the APK' certificate to extract it. If you encounter a serie of APKs with the same Developer, you can create a Yara rule to know more of them.
 
