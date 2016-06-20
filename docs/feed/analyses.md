@@ -59,3 +59,31 @@ python feed.py --analysis 60
 # Waiting for the next package
 # Waiting 60 minutes
 ```
+
+
+## Output example
+The previous scripts/commands returns a zip with the next structure:
+```bash
+$ curl -g -O -J -L -H "Authorization: Token YOUTOKEN" https://api.koodous.com/feed/analyses
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 3616k  100 3616k    0     0  2374k      0  0:00:01  0:00:01 --:--:-- 2374k
+curl: Saved to filename 'analysis_20160610T1025.zip'
+
+$ unzip analysis_20160610T1025.zip 
+Archive:  analysis_20160610T1025.zip
+ extracting: 8ec8bf98cfc5269ce8ad56c4465d680a7f68b14e39a58fdad2f2be26af3e44f8.json  
+ extracting: b3e8856b74ec70c40bd44706ff8dc8e9119d8c2e57cd051dbce7f90de304399f.json  
+ extracting: fd60be21459b73eb6db9d16bc15e5e632e5f6e5f874cb472617b38a62ddb0fcf.json  
+ extracting: 64b47a53214d8bee3c7abcbfe1dc4324e271ef570a9f8524bf3aa22ae35ff435.json  
+ extracting: 5c66e5705448fadaf2a1fe3e3df326bcf43bdeedbdcdc78e49ec3d46737c8e18.json  
+ extracting: a45548b940cfb92c0932fc272f638917880e82a4de1e883176fe08f6ebeb678d.json  
+ extracting: 5a098e7ab33e503ed495c0df3e279e3468271817dea1f0576ea9b5410cca4186.json  
+ extracting: 41d931b8c7baf50a6ddf85cb89137640a567c2168e4aecc6c32d24a6fd3fc7bc.json  
+ extracting: bdd5014ecd21be5a8049b873954ec65ce10e8ba0513a28d8ac6a55d1a37d28f3.json
+ [... MORE ...]
+
+```
+
+The unzip command will generate many ```json``` files as analyses made in that period. The json format analysis is the same that you can retrieve in the "Analysis report" tab for each sample.
