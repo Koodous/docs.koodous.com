@@ -59,3 +59,32 @@ python feed.py --apks 60
 # Waiting for the next package
 # Waiting 60 minutes
 ```
+
+## Output example
+The previous scripts/commands returns a zip with the next structure:
+```zsh
+$ curl -g -O -J -L -H "Authorization: Token YOURTOKEN" https://api.koodous.com/feed/apks
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+100  346k  100  346k    0     0   217k      0  0:00:01  0:00:01 --:--:-- 1581k
+curl: Saved to filename 'apk_20160613T1055.zip'
+
+$ unzip apk_20160613T1055.zip 
+Archive:  apk_20160613T1055.zip
+ extracting: samples                 
+
+$ head samples
+4ec241ca61f1fcdd1ebc594ea3fe58c2ee3ba16a6d9e4c6a607ad41a2fcb4cc3;https://storage.koodous.com/download_id
+0b1fddf4e8a3b61545c08318230b0ae6f0e4dc4bbb0ca0f0505308e4e1b861b9;https://storage.koodous.com/download_id
+62a8ffe8f6583f9003d7187f927fce638030f7836f56c471758beed19bba51e3;https://storage.koodous.com/download_id
+346b99d75fafd71b7d9f9e1461b6c2e060539e5435ded2e59d55b94483963313;https://storage.koodous.com/download_id
+3aebe69047c15be5101738f90cdd5eff7e3fd644a41110c4a8a489a34e87d273;https://storage.koodous.com/download_id
+3359d33fdc2d064ad1d383b0aab35ca7d52372c026b941b0603200a024b11674;https://storage.koodous.com/download_id
+6c0846c0081a214cda84456b4c163a994f9eb38d5983727817c2954b1e24b18f;https://storage.koodous.com/download_id
+33e06081e1fae22b46c3a2d40f58361e43d44b18c05f0c1b46f212323f4489e1;https://storage.koodous.com/download_id
+de9c173a5884f4bff30d080f3f2dc86a34b228377e443cc18e09e4f1e2f1aefc;https://storage.koodous.com/download_id
+85a4b2b6768a476b46b880dcd0ed39b9e9d0fa02fd30e0d8783f81b318f7370b;https://storage.koodous.com/download_id
+```
+
+The file ```samples``` contains the sha256 of the sample and a direct download link per line. Using this link you can download the sample directly.
