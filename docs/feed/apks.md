@@ -62,7 +62,7 @@ python feed.py --apks 60
 
 ## Output example
 The previous scripts/commands returns a zip with the next structure:
-```zsh
+```bash
 $ curl -g -O -J -L -H "Authorization: Token YOURTOKEN" https://api.koodous.com/feed/apks
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
