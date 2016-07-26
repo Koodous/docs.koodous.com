@@ -1,6 +1,6 @@
 # Introduction
 
-Droidbox is a tool to perform a dynamic analysis of Android applications. With this module developed to be used with Yara, you can match applications by several criteria based on the dynamic analysis.
+Droidbox is a tool to perform dynamic analysis of Android applications. With this module developed to be used with Yara, you can match applications by several criteria based on the dynamic analysis.
 
 First of all, you need to import the module with the next directive at the header of the ruleset.
 
@@ -9,7 +9,7 @@ import "droidbox"
 ```
 
 #Send SMS
-If during the dynamic analysis the application send any SMS we register that. For instance, a tipical Android trojan after the installation and execution, it download a list of premium number and then send one SMS to each one.
+If during the dynamic analysis the application send any SMS we register that. For instance, a tipical Android trojan after the installation and execution, it downloads a list of premium numbers and then sends one SMS to each one.
 
 You can view this in the Droidbox report, under the **Analysis report** tab of the application (SMS).
 
@@ -38,7 +38,7 @@ droidbox.sendsms(/23/)
 ```
 
 #Phone calls
-Some times the applications make calls (in background or showing to the user, shamelessly!), you can detect this applications with this simple condition:
+Some times the applications make calls (in background or showing to the user, shamelessly!), you can detect these applications with this simple condition:
 
 ```
 rule videogames

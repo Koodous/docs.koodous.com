@@ -12,7 +12,7 @@ Write your own Yara rules to find interesting Android apps and identify possible
 
 ## Android researching
 
-Use our powerful searching system to find the APK your are looking for between million of samples.
+Use our powerful search system to find the APK your are looking for between million of samples.
 
 ![Koodous Apks](img/koodous-apks.png)
 
