@@ -1,18 +1,17 @@
 #Getting started
 
-The Koodous public REST API gives you the chance to create your Koodous client for different platforms.
+The Koodous public REST API gives you the chance to create your own Koodous client for different platforms.
 
 ## Creating an account
 
-You can use our API without any authentication token. However there are some requests that need
-an user token to be done (vote or comment and apk are examples of that kind of requests).
+You can use our API without authentication token. However, there are some requests that require an user token to be done, such as voting, comment and APK-related. 
 
-To get your API token just create your account on koodous and check 
+In order to get your API token just create your account on koodous and check 
 your [user settings page](//koodous.com/settings/profile) to get your access token.
 
 ## Authentication
 
-To use the requests that need authentication you need to specify your user token using `Authorization` header. A request with token `c080ddd1fab46bc919ca0d62299e9995b1886853` should looks like follows:
+To use the requests that require authentication you need to specify your user token using the `Authorization` header. A request with token `c080ddd1fab46bc919ca0d62299e9995b1886853` should look like the following:
 
 ```
 GET /apks
@@ -21,7 +20,7 @@ Authorization: Token c080ddd1fab46bc919ca0d62299e9995b1886853
 
 ## Response
 
-Responses format are json. The example response of the last request will looks like follows:
+Response format is JSON. The example response of the previous request will look like this:
 
 ```
 {
@@ -56,7 +55,7 @@ Responses format are json. The example response of the last request will looks l
 }
 ```
 
-## Api levels
+## API levels
 
 Depending on your API level, you can have different limits when interacting with the Koodous API.
 
@@ -67,7 +66,7 @@ Depending on your API level, you can have different limits when interacting with
 
 ## Python example
 
-Here you have an example using python and [requests library](http://docs.python-requests.org/en/latest/):
+Here you have an example using Python and [requests library](http://docs.python-requests.org/en/latest/):
 
 ```python
 import requests

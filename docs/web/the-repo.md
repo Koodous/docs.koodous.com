@@ -1,4 +1,4 @@
-The repository screen of Koodous let you search through _millions of packages_ looking for any particular application. Once you have found your "target", you can access the detailed view, where you can vote, comment, download it and ask for an on-demand analisys. 
+The repository screen of Koodous allows you to search through _millions of packages_ any particular application. Once you have found your "target", you can access the detailed view, where you can vote, comment, download it and ask for an on-demand analysis. 
 
 ***
 
@@ -18,17 +18,17 @@ In the repository screen you can search for any APK in the system. Depending of 
 ** MD5
 ** Package
 
-When searching for a particular hash, you must enter _exactly_ the number of characters it has. This means that if you search for a partial hash, like 0bb9246deae4d3210e06791e9999c45 (notice the last character is left), the search engine will look in any partial match field, probably giving you no results at all. The search engine neither do partial searchs on package names.
+When searching for a particular hash, you must enter _exactly_ the number of characters it has. This means that if you search for a partial hash, such as 0bb9246deae4d3210e06791e9999c45 (notice the last character is left), the search engine will look in any partial match field, probably giving you no results at all. The search engine doesn't perform partial searches on package names either.
 
-<del>At the moment there is no way to tell the search engine what are you looking for. So, if you look for a string i.e. Rockstar, you will have applications and developers which has this string somewhere in its name.</del> Look at the next section!
+At the moment, there is no way to tell the search engine what you are looking for. So, if you search a string (i.e. Rockstar), applications, packages and developers containing that string will be shown. Look at the next section!
 
 ## Advanced search
 
-We provide an advance search to do more easy the search of malware o interesting samples. You can filter by tags, filesize, user's rating, ... For instance, if we can find applications with a rating less than -1 and from GooglePlay, you can use ```rating:-1- and tag:googleplay```. This is usefull to detect applications rated by users that maybe are not detected by any ruleset.
+We provide an advanced search to ease the search of malware or interesting samples. You can either filter by tags, filesize, user's rating, ... For instance, if we can find applications with a rating less than -1 and from GooglePlay, you can use ```rating:-1- and tag:googleplay```. This is useful to detect applications rated by users that maybe are not detected by any ruleset.
 
 Another interesting search can be: ```package_name:"com.whatsapp" and not developer:"WhatsApp Inc."```
 
-the following table describe each of search modifiers availables, you can combine these as you can with **and**, **or** and **not**.
+The following table describes each search modifier available, you can combine these as you can with **and**, **or** and **not**.
 
 | Attribute | Modificator | Description |
 | ------------- |:-------------:| ----- |
@@ -47,12 +47,11 @@ the following table describe each of search modifiers availables, you can combin
 
 Entering on the detailed view of an APK is as easy as clicking over its name or SHA256 hash. Once inside, it is possible to see more information, vote it, write comments, request an analysis or download it.
 
-The comment system is placed on a tab and is pretty straight-forward: write your findings or opinions and push Send. Just remember to be respectful with the rest of the community, do constructive critics and follow the standart netiquette. 
+The comment system is placed on a tab and is pretty straight-forward: write your findings or opinions and click Send. Just remember to be respectful with the rest of the community, do constructive critics and follow the standard netiquette. 
 
-The up and down arrows on the right of the application image let you vote if that specific application is trustworthy or not. Please notice is not about how you like an application, but about how safe you think it is. 
+The up and down arrows on the right of the application image allows you to vote if that specific application is trustworthy or not. Please notice this is not about how you like an application, but about how safe you think it is. 
 
-
-Many APKs contain the ![Corrupted](../img/corrupted-tag.png) tag. This only mean that we don't detect a dex file OR a resources file OR a certificate. Many service apps installed on devices by default doesn't have a certificate, for instance, and we consider that it is corrupted.
+Many APKs contain the ![Corrupted](../img/corrupted-tag.png) tag.  This just means that we haven't been able to detect a .dex file, resources file or a certificate. Many service APPs installed on devices don't have a certificate by default. Because of this, we consider that it's corrupted. 
 
 You can download and send an analysis request using the specific buttons above the app image. 
 
@@ -60,5 +59,5 @@ You can download and send an analysis request using the specific buttons above t
 
 * The _General info_ tab shows a brief summary of the most identificative information. 
 * Depending on the app, another _Metadata_ tab will appear showing a more complete report with information from Google Play, such as ratings and categories. 
-* If the APK has been analysed, another _Analysis_ tab will show the report, also in json format. 
+* If the APK has been analyzed, another _Analysis_ tab will show the report, also in json format. 
 

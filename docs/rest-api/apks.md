@@ -10,7 +10,7 @@ This method returns a paginated list of apks
 
 ## Object details
 
-* **created_on** _The date when apks was created on koodous._
+* **created_on** _The date when APKs were created on koodous._
 * **rating** _A value of users votes_
 * **image** _APP image used shown on devices_
 * **md5** _md5 hash_

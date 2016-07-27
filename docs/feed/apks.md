@@ -1,16 +1,17 @@
 # APKs feed
 
-***This is a private method If you want to use it contact us at [info@koodous.com](mailto:info@koodous.com)***
+***This is a private method. If you want to use it contact us at [info@koodous.com](mailto:info@koodous.com)***
 
-If you want to download all apks from our repository as soon we add them you can use this method.
+If you want to download all APKs from our repository as soon we add them you can use this method.
 
-You can either get a latest 5 or 60 minutes zip file with a list or url of samples. With an argument you can select the range you prefer.
+You can obtain a .zip file containing a list of URL samples from the lastest 5 minutes to 60. With an argument, you can choose the range you prefer. 
+
 
 ## Example simple request
 
 `https://api.koodous.com/feed/apks(?package=)`
 
-The request redirects you to the latest .zip
+This request redirects you to the latest .zip
 
 ## Curl basic example
 
@@ -31,7 +32,7 @@ You can download a specific package using `?package` param:
 
 The package should have the next format: YYYYMMDDTHHMM. Example: 20160510T1025 (The latest number can be only 5 or 0).
 
-The availability of each package is a week right after its creation.
+Each package is available a week right after its creation. 
 
 ```bash
 curl -g -O -J -L -H "Authorization: Token YOURTOKEN" https://api.koodous.com/feed/apks?package=20160610T1025
@@ -46,7 +47,7 @@ curl -g -O -J -L -H "Authorization: Token YOURTOKEN" https://api.koodous.com/fee
 
 You can use our feed.py script. Check it out [here](https://github.com/Koodous/Scripts/blob/master/feed.py)
 
-The usage is simple: modify the script and replace `TOKEN = "" ` with your api token and then:
+The usage is simple: modify the script and replace `TOKEN = "" ` with your API token and then:
 
 ```bash
 python feed.py --apks 5
@@ -62,7 +63,7 @@ python feed.py --apks 60
 
 ## Output example
 
-The previous scripts/commands returns a zip with a file called ```samples``` inside:
+The previous scripts/commands returns a .zip with a file named ```samples``` inside:
 ```bash
 $ curl -g -O -J -L -H "Authorization: Token YOURTOKEN" https://api.koodous.com/feed/apks
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -88,4 +89,4 @@ de9c173a5884f4bff30d080f3f2dc86a34b228377e443cc18e09e4f1e2f1aefc;https://storage
 85a4b2b6768a476b46b880dcd0ed39b9e9d0fa02fd30e0d8783f81b318f7370b;https://storage.koodous.com/download_id
 ```
 
-The file ```samples``` contains the sha256 of the sample and a direct download link per line. Using this link you can download the sample directly.
+The ```samples``` file contains the sha256 of the sample and a direct download link per line. Using this link you can download the sample directly.

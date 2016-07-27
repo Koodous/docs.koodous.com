@@ -38,7 +38,7 @@ rule my_apk: koodous
 ```
 
 # SHA256
-To match with the application with a certain SHA256 hash. This is the recommended hash if you want to find or create a whitelist. In the moment of writing this docs, sha256 is still "alive". :)
+To match with the application with a certain SHA256 hash. This is the recommended hash if you want to find or create a whitelist. In the moment of writing these docs, sha256 is still "alive". :)
 
 ```
 file.sha256(string)

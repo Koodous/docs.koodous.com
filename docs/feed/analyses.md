@@ -1,16 +1,16 @@
-# Analyses feed
+# Analysis feed
 
-***This is a private method If you want to use it contact us at [info@koodous.com](mailto:info@koodous.com)***
+***This is a private method. If you want to use it contact us at [info@koodous.com](mailto:info@koodous.com)***
 
-If you want to download all apks analysis reports from our repository as soon we add them you can use this method.
+If you want to download all APKs analysis reports from our repository as soon we add them you can use this method.
 
-You can either get a latest 5 or 60 minutes zip file full of json reports. With an argument you can select the range you prefer.
+You can obtain a .zip file containing a JSON full of reports from the lastest 5 minutes to 60. With an argument, you can select the preferred range. 
 
-## Example simple request
+## Simple request example
 
 `https://api.koodous.com/feed/analyses(?package=)`
 
-The request redirects you to the latest .zip
+This request redirects you to the latest .zip
 
 ## Curl basic example
 
@@ -31,7 +31,7 @@ You can download a specific package using `?package` param:
 
 The package should have the next format: YYYYMMDDTHHMM. Example: 20160510T1025 (The latest number can be only 5 or 0).
 
-The availability of each package is a week right after its creation.
+Each package is available a week right after its creation. 
 
 ```bash
 curl -g -O -J -L -H "Authorization: Token YOURTOKEN" https://api.koodous.com/feed/analyses?package=20160610T1025
@@ -46,7 +46,7 @@ curl -g -O -J -L -H "Authorization: Token YOURTOKEN" https://api.koodous.com/fee
 
 You can use our feed.py script. Check it out [here](https://github.com/Koodous/Scripts/blob/master/feed.py)
 
-The usage is simple: modify the script and replace `TOKEN = "" ` with your api token and then:
+The usage is simple: modify the script and replace `TOKEN = "" ` with your API token and then:
 
 ```bash
 python feed.py --analysis 5
@@ -62,7 +62,7 @@ python feed.py --analysis 60
 
 
 ## Output example
-The previous scripts/commands returns a zip with the next structure:
+The previous scripts/commands returns a .zip file with the next structure:
 ```bash
 $ curl -g -O -J -L -H "Authorization: Token YOUTOKEN" https://api.koodous.com/feed/analyses
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -86,4 +86,4 @@ Archive:  analysis_20160610T1025.zip
 
 ```
 
-The unzip command will generate many ```json``` files as analyses made in that period. The json format analysis is the same that you can retrieve in the "Analysis report" tab for each sample.
+The unzip command will generate as many ```json``` files as analysis were made in that period of time. The analysis' JSON format follows the same structure as the one you can obtain from the "Analysis report" tab on each sample. 
