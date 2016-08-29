@@ -17,21 +17,21 @@ You have the possibility to look for apks introducing text with no command at al
 
 From here you can use some little commands to exclude or add some options to your search. Check out the following examples:
 
-- [66038ee31eea9fa77cb657299edcca9f66b9ba26af0c9eb514aff39abfd2b68c](http://localkoodous.com:8000/apks?search=66038ee31eea9fa77cb657299edcca9f66b9ba26af0c9eb514aff39abfd2b68c) Looks for the introduced hash
-- [Whatsapp](http://localkoodous.com:8000/apks?search=Whatsapp) Looks for **Whatsapp**
-- [Whatsap*](http://localkoodous.com:8000/apks?search=Whatsap*) Looks for strings that start with **Whatsap**
-- [Whatsapp -com.whatsapp](http://localkoodous.com:8000/apks?search=Whatsapp%20-com.whatsapp) Looks for **Whatsapp* excluding **com.whatsapp**
-- [Whatsapp~1 -com.whatsapp](http://localkoodous.com:8000/apks?search=Whatsapp~1%20-com.whatsapp) Looks for **Whatsapp** and similars words (like typos) excluding **com.whatsapp**. The number **1** can get higher for a softer comparison.
-- ["Whatsapp Plus"](http://localkoodous.com:8000/apks?search="Whatsapp%20Plus") Looks for apps with that two words in that order
-- [Whatsapp AND Facebook](http://localkoodous.com:8000/apks?search=Whatsapp%20AND%20Facebook) Looks for apps that contains both both words (**AND** can be removed as is the default command)
-- [Whatsapp OR Facebook](http://localkoodous.com:8000/apks?search=Whatsapp%20OR%20Facebook) Looks for apps that contains **Whatsapp** or **Facebook**
-- [(Whatsapp OR Facebook) -(com.principal OR com.whatsapp)](http://localkoodous.com:8000/apks?search=(Whatsapp%20OR%20Facebook)%20-(com.principal%20OR%20com.whatsapp)) You can group conditions and excluding them too
+- [66038ee31eea9fa77cb657299edcca9f66b9ba26af0c9eb514aff39abfd2b68c](https://koodous.com/apks?search=66038ee31eea9fa77cb657299edcca9f66b9ba26af0c9eb514aff39abfd2b68c) Looks for the introduced hash
+- [Whatsapp](https://koodous.com/apks?search=Whatsapp) Looks for **Whatsapp**
+- [Whatsap*](https://koodous.com/apks?search=Whatsap*) Looks for strings that start with **Whatsap**
+- [Whatsapp -com.whatsapp](https://koodous.com/apks?search=Whatsapp%20-com.whatsapp) Looks for **Whatsapp* excluding **com.whatsapp**
+- [Whatsapp~1 -com.whatsapp](https://koodous.com/apks?search=Whatsapp~1%20-com.whatsapp) Looks for **Whatsapp** and similars words (like typos) excluding **com.whatsapp**. The number **1** can get higher for a softer comparison.
+- ["Whatsapp Plus"](https://koodous.com/apks?search="Whatsapp%20Plus") Looks for apps with that two words in that order
+- [Whatsapp AND Facebook](https://koodous.com/apks?search=Whatsapp%20AND%20Facebook) Looks for apps that contains both both words (**AND** can be removed as is the default command)
+- [Whatsapp OR Facebook](https://koodous.com/apks?search=Whatsapp%20OR%20Facebook) Looks for apps that contains **Whatsapp** or **Facebook**
+- [(Whatsapp OR Facebook) -(com.principal OR com.whatsapp)](https://koodous.com/apks?search=(Whatsapp%20OR%20Facebook)%20-(com.principal%20OR%20com.whatsapp)) You can group conditions and excluding them too
 
 ## Advanced search
 
-We provide an advanced search to ease the search of malware or interesting samples. You can either filter by tags, filesize, user's rating, ... For instance, if we can find applications with a rating less than -1 and from GooglePlay, you can use [```rating:<=-1 tags:googleplay```](http://localkoodous.com:8000/apks?search=rating:<=-1 tags:googleplay). This is useful to detect applications rated by users that maybe are not detected by any ruleset.
+We provide an advanced search to ease the search of malware or interesting samples. You can either filter by tags, filesize, user's rating, ... For instance, if we can find applications with a rating less than -1 and from GooglePlay, you can use [```rating:<=-1 tags:googleplay```](https://koodous.com/apks?search=rating:<=-1 tags:googleplay). This is useful to detect applications rated by users that maybe are not detected by any ruleset.
 
-Another interesting search can be: [```package_name:"com.whatsapp" -developer:"WhatsApp Inc."```](http://localkoodous.com:8000/apks?search=package_name:"com.whatsapp"%20-developer:"WhatsApp%20Inc.")
+Another interesting search can be: [```package_name:"com.whatsapp" -developer:"WhatsApp Inc."```](https://koodous.com/apks?search=package_name:"com.whatsapp"%20-developer:"WhatsApp%20Inc.")
 
 The following table describes each search modifier available, you can combine these as you can with the previous examples on regular text search section.
 
