@@ -6,42 +6,47 @@ The repository screen of Koodous allows you to search through _millions of packa
 
 In the repository screen you can search for any APK in the system. Depending of the fields, the search will return APKs with an exact or partial match:
 
-#### Partial match fields
+#### Regular text search
 
-** App name
-** Developer
+You have the possibility to look for apks introducing text with no command at all. The entered text will be compared to the following fields:
 
-#### Exact match fields
+- App name
+- Developer
+- Package
+- Hash (md5, sha1, sha256)
 
-** SHA256
-** SHA1
-** MD5
-** Package
+From here you can use some little commands to exclude or add some options to your search. Check out the following examples:
 
-When searching for a particular hash, you must enter _exactly_ the number of characters it has. This means that if you search for a partial hash, such as 0bb9246deae4d3210e06791e9999c45 (notice the last character is left), the search engine will look in any partial match field, probably giving you no results at all. The search engine doesn't perform partial searches on package names either.
-
-At the moment, there is no way to tell the search engine what you are looking for. So, if you search a string (i.e. Rockstar), applications, packages and developers containing that string will be shown. Look at the next section!
+- [66038ee31eea9fa77cb657299edcca9f66b9ba26af0c9eb514aff39abfd2b68c](http://localkoodous.com:8000/apks?search=66038ee31eea9fa77cb657299edcca9f66b9ba26af0c9eb514aff39abfd2b68c) Looks for the introduced hash
+- [Whatsapp](http://localkoodous.com:8000/apks?search=Whatsapp) Looks for **Whatsapp**
+- [Whatsap*](http://localkoodous.com:8000/apks?search=Whatsap*) Looks for strings that start with **Whatsap**
+- [Whatsapp -com.whatsapp](http://localkoodous.com:8000/apks?search=Whatsapp%20-com.whatsapp) Looks for **Whatsapp* excluding **com.whatsapp**
+- [Whatsapp~1 -com.whatsapp](http://localkoodous.com:8000/apks?search=Whatsapp~1%20-com.whatsapp) Looks for **Whatsapp** and similars words (like typos) excluding **com.whatsapp**. The number **1** can get higher for a softer comparison.
+- ["Whatsapp Plus"](http://localkoodous.com:8000/apks?search="Whatsapp%20Plus") Looks for apps with that two words in that order
+- [Whatsapp AND Facebook](http://localkoodous.com:8000/apks?search=Whatsapp%20AND%20Facebook) Looks for apps that contains both both words (**AND** can be removed as is the default command)
+- [Whatsapp OR Facebook](http://localkoodous.com:8000/apks?search=Whatsapp%20OR%20Facebook) Looks for apps that contains **Whatsapp** or **Facebook**
+- [(Whatsapp OR Facebook) -(com.principal OR com.whatsapp)](http://localkoodous.com:8000/apks?search=(Whatsapp%20OR%20Facebook)%20-(com.principal%20OR%20com.whatsapp)) You can group conditions and excluding them too
 
 ## Advanced search
 
-We provide an advanced search to ease the search of malware or interesting samples. You can either filter by tags, filesize, user's rating, ... For instance, if we can find applications with a rating less than -1 and from GooglePlay, you can use ```rating:-1- and tag:googleplay```. This is useful to detect applications rated by users that maybe are not detected by any ruleset.
+We provide an advanced search to ease the search of malware or interesting samples. You can either filter by tags, filesize, user's rating, ... For instance, if we can find applications with a rating less than -1 and from GooglePlay, you can use [```rating:<=-1 tags:googleplay```](http://localkoodous.com:8000/apks?search=rating:<=-1 tags:googleplay). This is useful to detect applications rated by users that maybe are not detected by any ruleset.
 
-Another interesting search can be: ```package_name:"com.whatsapp" and not developer:"WhatsApp Inc."```
+Another interesting search can be: [```package_name:"com.whatsapp" -developer:"WhatsApp Inc."```](http://localkoodous.com:8000/apks?search=package_name:"com.whatsapp"%20-developer:"WhatsApp%20Inc.")
 
-The following table describes each search modifier available, you can combine these as you can with **and**, **or** and **not**.
+The following table describes each search modifier available, you can combine these as you can with the previous examples on regular text search section.
 
 | Attribute | Modificator | Description |
 | ------------- |:-------------:| ----- |
-| Rating | rating: | This modificator is used to obtain application with certain users rating. You can get applications with score greater or equal than 2 with ```rating:2+```. Or more interesting, with score equal or less than -1 ```rating:-1-``` |
-| Developer | developer: | The developer of each application is extracted from the certificate, and you can search by these using this modificator. For instance: ```developer:"WhatsApp Inc."``` |
+| Rating | rating: | This modificator is used to obtain application with certain users rating. You can get applications with score greater or equal than 2 with ```rating:>2```. Or more interesting, with score equal or less than -1 ```rating:>=-1``` |
+| Developer | developer: (or company:) | The developer of each application is extracted from the certificate, and you can search by these using this modificator. For instance: ```developer:"WhatsApp Inc."``` |
 | Package Name | package_name: | Each application must have an unique package name, and each update must have the same name. Example: ```package_name:com.whatsapp``` |
-| App Name | appname: | The name of the application, for instance: ```appname:WhatsApp``` |
-| Filesize | size: | The filesize of the APK file is, in many times, an indicator of their purpose. You can filter by this parameter with, for instance, for files greater or equal than 1MB: ```size:1MB+```, or less than 700KB: ```size:700KB-```. |
-| Tag | tag: | We tag the samples with interesting word and each user can set by one or more tag to any sample, and you can find for this. For example, finding sample that we know come from Google Play: ```tag:googleplay``` or that any user has tagged as **banker** ```tag:banker``` |
-| Submission date | date: | The date when each APK was submitted is indexed and you can filter by that. For instance: ```date:2015-06-16-``` for samples previous to this date and ```date:2015-06-16+``` for samples submitted after this date. 
-| Certificate | cert: or certificate: | Each application (as well the well-formed) has signed by a certificate. We have each certificate indexed and you can find by that, concretly by its *sha1*. For instance, we know that official Twitter application has **40F3166BB567D3144BCA7DA466BB948B782270EA** as sha1 certificate, then, we can found all versions of the official Twitter application with this: ```cert:40F3166BB567D3144BCA7DA466BB948B782270EA``` or ```certificate:40F3166BB567D3144BCA7DA466BB948B782270EA``` if you want to write a bit more :).|
-| Installed on devices | installed | This search modifier has no parameters. It search only APKs that are installed or sometime was installed in some device. Example: ```installed``` or ```not installed``` |
-| Detected by community | detected | This search modifier has no parameters. It search only APKs that has been detected by Koodous community. Example: ```detected``` or ```not detected``` |
+| App Name | appname: (or app:) | The name of the application, for instance: ```appname:WhatsApp``` |
+| Filesize (in bytes) | size: | The filesize of the APK file is, in many times, an indicator of their purpose. You can filter by this parameter with, for instance, for files greater or equal than 1MB: ```size:>1000000```, or less than 700KB: ```size:<700000```. Last but not least, you can use ranges (from 700kb to 1MB) ```size:[700000 TO 1000000]``` |
+| Tag | tags: | We tag the samples with interesting word and each user can set by one or more tag to any sample, and you can find for this. For example, finding sample that we know come from Google Play: ```tags:googleplay``` or that any user has tagged as **banker** ```tags:banker``` |
+| Submission date | date: (or created_on:) | The date when each APK was submitted is indexed and you can filter by that. For instance: ```date:<2015-06-16``` for samples previous to this date and ```date:>2015-06-16``` for samples submitted after this date. Here, ranges can be used too ```date:[2015-06-16 TO 2015-06-17]```
+| Certificate | certificate: (or cert:) | Each application (as well the well-formed) has signed by a certificate. We have each certificate indexed and you can find by that, concretly by its *sha1*. For instance, we know that official Twitter application has **40F3166BB567D3144BCA7DA466BB948B782270EA** as sha1 certificate, then, we can found all versions of the official Twitter application with this: ```cert:40F3166BB567D3144BCA7DA466BB948B782270EA``` or ```certificate:40F3166BB567D3144BCA7DA466BB948B782270EA``` if you want to write a bit more :).|
+| Installed on devices | installed: (or on_devices:) | This search modifier has no parameters. It search only APKs that are installed or sometime was installed in some device. Example: ```installed:true``` or ```installed:false``` |
+| Detected by community | detected: | This search modifier has no parameters. It search only APKs that has been detected by Koodous community. Example: ```detected:true``` or ```detected:false``` |
 
 
 ## The detailed view
