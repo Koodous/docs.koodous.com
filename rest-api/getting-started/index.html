@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Getting started - Koodous Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../../favicon.png">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Getting started";
+    var mkdocs_page_input_path = "rest-api/getting-started.md";
+    var mkdocs_page_url = "/rest-api/getting-started/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-62062848-2', 'docs.koodous.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Koodous Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>The Koodous web</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../web/getting-started/">Getting started</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../web/the-repo/">The repository</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>REST API</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Getting started</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#getting-started">Getting started</a></li>
+                
+                    <li><a class="toctree-l4" href="#creating-an-account">Creating an account</a></li>
+                
+                    <li><a class="toctree-l4" href="#authentication">Authentication</a></li>
+                
+                    <li><a class="toctree-l4" href="#response">Response</a></li>
+                
+                    <li><a class="toctree-l4" href="#api-levels">Api levels</a></li>
+                
+                    <li><a class="toctree-l4" href="#python-example">Python example</a></li>
+                
+                    <li><a class="toctree-l4" href="#python-api-class">Python API Class</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>REST API (most used methods)</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apks/">APKs</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apk-download/">APK Download</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apk-upload/">APK Upload</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apk-analysis/">APK Analysis</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../feed/apks/">APKs feed</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../feed/analyses/">Analyses feed</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>REST API (misc methods)</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apk-comments/">APK Comments</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apk-votes/">APK Votes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../analysts/">Analysts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../user_rulesets/">Your Rulesets</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../public_rulesets/">Public Rulesets</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../public_rulesets_votes/">Public Rulesets Votes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../public_rulesets_comments/">Public Rulesets Comments</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Yara</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../yara/getting-started/">Getting started</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../yara/androguard/">Androguard</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../yara/droidbox/">Droidbox</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../yara/file/">File</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Koodous Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>REST API &raquo;</li>
+        
+      
+    
+    <li>Getting started</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="getting-started">Getting started</h1>
+<p>The Koodous public REST API gives you the chance to create your Koodous client for different platforms.</p>
+<h2 id="creating-an-account">Creating an account</h2>
+<p>You can use our API without any authentication token. However there are some requests that need
+an user token to be done (vote or comment and apk are examples of that kind of requests).</p>
+<p>To get your API token just create your account on koodous and check 
+your <a href="//koodous.com/settings/profile">user settings page</a> to get your access token.</p>
+<h2 id="authentication">Authentication</h2>
+<p>To use the requests that need authentication you need to specify your user token using <code>Authorization</code> header. A request with token <code>c080ddd1fab46bc919ca0d62299e9995b1886853</code> should looks like follows:</p>
+<pre><code>GET /apks
+Authorization: Token c080ddd1fab46bc919ca0d62299e9995b1886853
+</code></pre>
+
+<h2 id="response">Response</h2>
+<p>Responses format are json. The example response of the last request will looks like follows:</p>
+<pre><code>{
+    &quot;count&quot;: 12312,
+    &quot;next&quot;: &quot;https://api.koodous.com/apks?cursor=cD0yMDE2LTAxLTEzKzEwJTNBMzYlM0EwNyUyQjAwJTNBMDA%3D&quot;,
+    &quot;previous&quot;: null,
+    &quot;results&quot;: [
+        {
+            &quot;created_on&quot;: 1429390443,
+            &quot;rating&quot;: 0,
+            &quot;image&quot;: &quot;https://cdn1.koodous.com/apk_images/tmpFESIMk&quot;,
+            &quot;tags&quot;: [],
+            &quot;md5&quot;: &quot;ee644f55b915c9fb3362be28647eb976&quot;,
+            &quot;sha1&quot;: &quot;dee89c3cb639ca791ea3e7e2da3d7b8ac7972e13&quot;,
+            &quot;sha256&quot;: &quot;4891047860f004894de77b4c8018e3f69bb50a210159b77119e90dcd87860e98&quot;,
+            &quot;app&quot;: &quot;PornNow&quot;,
+            &quot;package_name&quot;: &quot;com.digitaran.pornnow&quot;,
+            &quot;company&quot;: &quot;Digitaran&quot;,
+            &quot;displayed_version&quot;: &quot;1.0&quot;,
+            &quot;size&quot;: 1040818,
+            &quot;stored&quot;: true,
+            &quot;analyzed&quot;: true,
+            &quot;is_apk&quot;: true,
+            &quot;trusted&quot;: false,
+            &quot;detected&quot;: false,
+            &quot;corrupted&quot;: false,
+            &quot;repo&quot;: &quot;&quot;,
+            &quot;on_devices&quot;: false
+        },
+        ...
+    ]
+}
+</code></pre>
+
+<h2 id="api-levels">Api levels</h2>
+<p>Depending on your API level, you can have different limits when interacting with the Koodous API.</p>
+<table>
+<thead>
+<tr>
+<th>Range</th>
+<th align="center">Basic</th>
+<th align="center">Bronze</th>
+<th align="center">Silver</th>
+<th align="center">Gold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>APK downloads</strong></td>
+<td align="center">50/day</td>
+<td align="center">100/day</td>
+<td align="center">250/day</td>
+<td align="center">500/day</td>
+</tr>
+<tr>
+<td><strong>Analysis requests</strong></td>
+<td align="center">50/day</td>
+<td align="center">100/day</td>
+<td align="center">100/day</td>
+<td align="center">100/day</td>
+</tr>
+</tbody>
+</table>
+<h2 id="python-example">Python example</h2>
+<p>Here you have an example using python and <a href="http://docs.python-requests.org/en/latest/">requests library</a>:</p>
+<pre><code class="python">import requests
+
+url = &quot;https://api.koodous.com/apks&quot;
+headers = {&quot;Authorization&quot;:&quot;Token c080ddd1fab46fc919ca0d62299e9995b1886853&quot;}
+r = requests.get(url=url, headers=headers)
+
+r.status_code
+#200
+
+r.json()
+#JSON response
+</code></pre>
+
+<h2 id="python-api-class">Python API Class</h2>
+<p>There is a python example class with almost all Koodous API methods, check it out:</p>
+<p><a href="https://github.com/Koodous/Scripts/blob/master/pykoodous.py">pykoodous.py</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../apks/" class="btn btn-neutral float-right" title="APKs">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../web/the-repo/" class="btn btn-neutral" title="The repository"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../web/the-repo/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../apks/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
