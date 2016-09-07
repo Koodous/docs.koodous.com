@@ -48,6 +48,11 @@ The following table describes each search modifier available, you can combine th
 | Installed on devices | installed: (or on_devices:) | This search modifier has no parameters. It search only APKs that are installed or sometime was installed in some device. Example: ```installed:true``` or ```installed:false``` |
 | Detected by community | detected: | This search modifier has no parameters. It search only APKs that has been detected by Koodous community. Example: ```detected:true``` or ```detected:false``` |
 | Hardcoded urls | url: (or urls:) | Looks for urls inside APK with partial or full search. Example: ```url:google.com``` or ```url:"https://play.google.com/store"``` |
+| Network hosts | network.hosts: | Looks for hosts of connections made from the app. Example: ```network.hosts:8.8.8.8``` |
+| Network http | network.http: | Looks for http uris of connections made from the app (full or partial search). Example: ```network.http:"com:80"``` |
+| Network DNS | network.dns: | Looks for dns resolutions made from the app (full or partial search). Example: ```network.dns:"google.com"``` |
+| Network domains | network.domains: | Like dns (full or partial search). Example: ```network.domains:"google.com"``` |
+
 
 
 ## The detailed view
