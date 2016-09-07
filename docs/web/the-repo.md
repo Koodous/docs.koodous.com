@@ -47,6 +47,7 @@ The following table describes each search modifier available, you can combine th
 | Certificate | certificate: (or cert:) | Each application (as well the well-formed) has signed by a certificate. We have each certificate indexed and you can find by that, concretly by its *sha1*. For instance, we know that official Twitter application has **40F3166BB567D3144BCA7DA466BB948B782270EA** as sha1 certificate, then, we can found all versions of the official Twitter application with this: ```cert:40F3166BB567D3144BCA7DA466BB948B782270EA``` or ```certificate:40F3166BB567D3144BCA7DA466BB948B782270EA``` if you want to write a bit more :).|
 | Installed on devices | installed: (or on_devices:) | This search modifier has no parameters. It search only APKs that are installed or sometime was installed in some device. Example: ```installed:true``` or ```installed:false``` |
 | Detected by community | detected: | This search modifier has no parameters. It search only APKs that has been detected by Koodous community. Example: ```detected:true``` or ```detected:false``` |
+| Hardcoded urls | url: (or urls:) | Looks for urls inside APK with partial or full search. Example: ```url:google.com``` or ```url:"https://play.google.com/store"``` |
 
 
 ## The detailed view
