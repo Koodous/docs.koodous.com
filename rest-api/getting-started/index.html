@@ -113,7 +113,7 @@
                 
                     <li><a class="toctree-l4" href="#response">Response</a></li>
                 
-                    <li><a class="toctree-l4" href="#api-levels">Api levels</a></li>
+                    <li><a class="toctree-l4" href="#api-levels">API levels</a></li>
                 
                     <li><a class="toctree-l4" href="#python-example">Python example</a></li>
                 
@@ -308,20 +308,19 @@
             <div class="section">
               
                 <h1 id="getting-started">Getting started</h1>
-<p>The Koodous public REST API gives you the chance to create your Koodous client for different platforms.</p>
+<p>The Koodous public REST API gives you the chance to create your own Koodous client for different platforms.</p>
 <h2 id="creating-an-account">Creating an account</h2>
-<p>You can use our API without any authentication token. However there are some requests that need
-an user token to be done (vote or comment and apk are examples of that kind of requests).</p>
-<p>To get your API token just create your account on koodous and check 
+<p>You can use our API without authentication token. However, there are some requests that require an user token to be done, such as voting, comment and APK-related. </p>
+<p>In order to get your API token just create your account on koodous and check 
 your <a href="//koodous.com/settings/profile">user settings page</a> to get your access token.</p>
 <h2 id="authentication">Authentication</h2>
-<p>To use the requests that need authentication you need to specify your user token using <code>Authorization</code> header. A request with token <code>c080ddd1fab46bc919ca0d62299e9995b1886853</code> should looks like follows:</p>
+<p>To use the requests that require authentication you need to specify your user token using the <code>Authorization</code> header. A request with token <code>c080ddd1fab46bc919ca0d62299e9995b1886853</code> should look like the following:</p>
 <pre><code>GET /apks
 Authorization: Token c080ddd1fab46bc919ca0d62299e9995b1886853
 </code></pre>
 
 <h2 id="response">Response</h2>
-<p>Responses format are json. The example response of the last request will looks like follows:</p>
+<p>Response format is JSON. The example response of the previous request will look like this:</p>
 <pre><code>{
     &quot;count&quot;: 12312,
     &quot;next&quot;: &quot;https://api.koodous.com/apks?cursor=cD0yMDE2LTAxLTEzKzEwJTNBMzYlM0EwNyUyQjAwJTNBMDA%3D&quot;,
@@ -354,7 +353,7 @@ Authorization: Token c080ddd1fab46bc919ca0d62299e9995b1886853
 }
 </code></pre>
 
-<h2 id="api-levels">Api levels</h2>
+<h2 id="api-levels">API levels</h2>
 <p>Depending on your API level, you can have different limits when interacting with the Koodous API.</p>
 <table>
 <thead>
@@ -363,28 +362,28 @@ Authorization: Token c080ddd1fab46bc919ca0d62299e9995b1886853
 <th align="center">Basic</th>
 <th align="center">Bronze</th>
 <th align="center">Silver</th>
-<th align="center">Gold</th>
+<th align="center">Gold + Feed</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>APK downloads</strong></td>
 <td align="center">50/day</td>
-<td align="center">100/day</td>
-<td align="center">250/day</td>
 <td align="center">500/day</td>
+<td align="center">1000/day</td>
+<td align="center">2000/day</td>
 </tr>
 <tr>
 <td><strong>Analysis requests</strong></td>
 <td align="center">50/day</td>
-<td align="center">100/day</td>
-<td align="center">100/day</td>
-<td align="center">100/day</td>
+<td align="center">250/day</td>
+<td align="center">500/day</td>
+<td align="center">1000/day</td>
 </tr>
 </tbody>
 </table>
 <h2 id="python-example">Python example</h2>
-<p>Here you have an example using python and <a href="http://docs.python-requests.org/en/latest/">requests library</a>:</p>
+<p>Here you have an example using Python and <a href="http://docs.python-requests.org/en/latest/">requests library</a>:</p>
 <pre><code class="python">import requests
 
 url = &quot;https://api.koodous.com/apks&quot;

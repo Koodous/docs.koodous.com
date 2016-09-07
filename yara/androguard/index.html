@@ -257,6 +257,9 @@
                 <li class="toctree-l3"><a href="#services">Services</a></li>
                 
             
+                <li class="toctree-l3"><a href="#filters">Filters</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#certificate">Certificate</a></li>
                 
                     <li><a class="toctree-l4" href="#sha1">SHA1</a></li>
@@ -338,12 +341,12 @@
               
                 <h1 id="introduction">Introduction</h1>
 <p>Androguard is a tool to make a static analysis of Android applications. With this module developed to be used with Yara, you can match applications by several criteria based on the static analysis.</p>
-<p>First of all, you need to import the module with the next directive at the header of the ruleset.</p>
+<p>Firstly, you need to import the module with the next directive at the header of the ruleset.</p>
 <pre><code>import &quot;androguard&quot;
 </code></pre>
 
 <h1 id="package-name">Package name</h1>
-<p>Each Android application has a package name that need to be unique once the application is installed in the mobile phone, but in the wild, we found several applications with the same (or similar) package name. To find this kind of applications, we can use the next condition (we use a complete rule for explain the behaviour):</p>
+<p>Each Android application has a package name that needs to be unique once the application is installed in the mobile phone, but in the wild, we find several applications with the same (or similar) package name. To find this kind of applications, we can use the next condition (we use a complete rule for explain the behaviour):</p>
 <pre><code>androguard.package_name(regex)
 </code></pre>
 
@@ -360,9 +363,9 @@
 }
 </code></pre>
 
-<p>You can add more restrictions to this rule, like strings, another functions of this module or conditions of another module.</p>
+<p>You can add more restrictions to this rule, like strings, other functions of this module or conditions of another module.</p>
 <h1 id="app-name">APP name</h1>
-<p>The app name displayed when you install an application in a device could be an indicator of an "anomaly". For this reason, we have an condition to catch this applications. You can match with a regex or with a string.</p>
+<p>The app name displayed when you install an application in a device could be an indicator of an "anomaly". For this reason, we have an condition to catch these applications. You can match with a regex or with a string.</p>
 <pre><code>androguard.app_name(regex)
 </code></pre>
 
@@ -380,7 +383,7 @@
 
 <h1 id="activities">Activities</h1>
 <p>The activities is an esential part of the Android applications. They define the "screens" of an application and its logic, so, with the name of that, you can filter some applications. In the next example, we are going to filter applications which the name one of its activity is sms, with a point after and before of that word.</p>
-<p>It accepts two formats, with string and with regular expression:</p>
+<p>It accepts two formats, with string and with regular expressions:</p>
 <pre><code>androguard.activity(string)
 </code></pre>
 
@@ -415,7 +418,7 @@
 </code></pre>
 
 <h1 id="permissions">Permissions</h1>
-<p>In order to detect some applications that requires an special or desired permissions, you can use this condition. It find in all permissions of the application and if one of this match with the regular expression, it generates a notification.</p>
+<p>In order to detect some applications that requires a special or desired permissions, you can use this condition. It find in all permissions of the application and if one of this match with the regular expression, it generates a notification.</p>
 <p>The format is the next:</p>
 <pre><code>androguard.permission(regex)
 </code></pre>
@@ -438,7 +441,7 @@
 </code></pre>
 
 <h1 id="services">Services</h1>
-<p>The service or services of an application are use to run tasks in background. Many times, the malware use this to downloads configuration files, to send stolen data or another thing, ever in background. In order to detect the applications that use an special or desired service name, you can use this condition. It find in all services of the application and if one of this match with the regular expression or an exact string and then generates a notification.</p>
+<p>The service or services of an application are use to run tasks in background. Many times, the malware uses this to downloads configuration files, to send stolen data or another thing, ever in background. In order to detect the applications that use an special or desired service name, you can use this condition. It searches through all services of the application and if one of them matches with the regular expression or an exact string a notification will be generated.</p>
 <pre><code>androguard.service(regex)
 </code></pre>
 
@@ -454,8 +457,25 @@
 }
 </code></pre>
 
+<h1 id="filters">Filters</h1>
+<p>Filters of an application are used to detect broadcasts of itself or other apps. </p>
+<pre><code>androguard.filter(regex)
+</code></pre>
+
+<pre><code>androguard.filter(string)
+</code></pre>
+
+<p>And you must use in the conditions section:</p>
+<pre><code>rule videogames
+{
+    condition:
+        androguard.filter(&quot;android.provider.Telephony.SMS_DELIVER&quot;)or
+        androguard.filter(/PACKAGE_ADDED/)
+}
+</code></pre>
+
 <h1 id="certificate">Certificate</h1>
-<p>In our website, one of the details of each APK is the "Developer". If you are a malware analyst, you must know that this field is not easy to know, so we use the APK' certificate to extract it. If you encounter a serie of APKs with the same Developer, you can create a Yara rule to know more of them.</p>
+<p>In our website, one of the details of each APK is the "Developer". If you are a malware analyst, you must know that this field is not easy to know, so we use the APK' certificate to extract it. If you encounter a series of APKs with the same Developer, you can create a Yara rule to know more of them.</p>
 <h3 id="sha1">SHA1</h3>
 <p>Each certificate has an SHA1 as a part of its signature, and you can match with it! Some malware developers use the same certificate for many samples, and with this condition you can detect them:</p>
 <pre><code>androguard.certificate.sha1(string)

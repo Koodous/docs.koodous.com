@@ -92,9 +92,7 @@
             
                 <li class="toctree-l3"><a href="#searching">Searching</a></li>
                 
-                    <li><a class="toctree-l4" href="#partial-match-fields">Partial match fields</a></li>
-                
-                    <li><a class="toctree-l4" href="#exact-match-fields">Exact match fields</a></li>
+                    <li><a class="toctree-l4" href="#regular-text-search">Regular text search</a></li>
                 
             
                 <li class="toctree-l3"><a href="#advanced-search">Advanced search</a></li>
@@ -307,24 +305,34 @@
           <div role="main">
             <div class="section">
               
-                <p>The repository screen of Koodous let you search through <em>millions of packages</em> looking for any particular application. Once you have found your "target", you can access the detailed view, where you can vote, comment, download it and ask for an on-demand analisys. </p>
+                <p>The repository screen of Koodous allows you to search through <em>millions of packages</em> any particular application. Once you have found your "target", you can access the detailed view, where you can vote, comment, download it and ask for an on-demand analysis. </p>
 <hr />
 <h2 id="searching">Searching</h2>
 <p>In the repository screen you can search for any APK in the system. Depending of the fields, the search will return APKs with an exact or partial match:</p>
-<h4 id="partial-match-fields">Partial match fields</h4>
-<p><strong> App name
-</strong> Developer</p>
-<h4 id="exact-match-fields">Exact match fields</h4>
-<p><strong> SHA256
-</strong> SHA1
-<strong> MD5
-</strong> Package</p>
-<p>When searching for a particular hash, you must enter <em>exactly</em> the number of characters it has. This means that if you search for a partial hash, like 0bb9246deae4d3210e06791e9999c45 (notice the last character is left), the search engine will look in any partial match field, probably giving you no results at all. The search engine neither do partial searchs on package names.</p>
-<p><del>At the moment there is no way to tell the search engine what are you looking for. So, if you look for a string i.e. Rockstar, you will have applications and developers which has this string somewhere in its name.</del> Look at the next section!</p>
+<h4 id="regular-text-search">Regular text search</h4>
+<p>You have the possibility to look for apks introducing text with no command at all. The entered text will be compared to the following fields:</p>
+<ul>
+<li>App name</li>
+<li>Developer</li>
+<li>Package</li>
+<li>Hash (md5, sha1, sha256)</li>
+</ul>
+<p>From here you can use some little commands to exclude or add some options to your search. Check out the following examples:</p>
+<ul>
+<li><a href="https://koodous.com/apks?search=66038ee31eea9fa77cb657299edcca9f66b9ba26af0c9eb514aff39abfd2b68c">66038ee31eea9fa77cb657299edcca9f66b9ba26af0c9eb514aff39abfd2b68c</a> Looks for the introduced hash</li>
+<li><a href="https://koodous.com/apks?search=Whatsapp">Whatsapp</a> Looks for <strong>Whatsapp</strong></li>
+<li><a href="https://koodous.com/apks?search=Whatsap*">Whatsap*</a> Looks for strings that start with <strong>Whatsap</strong></li>
+<li><a href="https://koodous.com/apks?search=Whatsapp%20-com.whatsapp">Whatsapp -com.whatsapp</a> Looks for <strong>Whatsapp* excluding </strong>com.whatsapp**</li>
+<li><a href="https://koodous.com/apks?search=Whatsapp~1%20-com.whatsapp">Whatsapp~1 -com.whatsapp</a> Looks for <strong>Whatsapp</strong> and similars words (like typos) excluding <strong>com.whatsapp</strong>. The number <strong>1</strong> can get higher for a softer comparison.</li>
+<li><a href="https://koodous.com/apks?search=" title="Whatsapp%20Plus">"Whatsapp Plus"</a> Looks for apps with that two words in that order</li>
+<li><a href="https://koodous.com/apks?search=Whatsapp%20AND%20Facebook">Whatsapp AND Facebook</a> Looks for apps that contains both both words (<strong>AND</strong> can be removed as is the default command)</li>
+<li><a href="https://koodous.com/apks?search=Whatsapp%20OR%20Facebook">Whatsapp OR Facebook</a> Looks for apps that contains <strong>Whatsapp</strong> or <strong>Facebook</strong></li>
+<li><a href="https://koodous.com/apks?search=(Whatsapp%20OR%20Facebook)%20-(com.principal%20OR%20com.whatsapp)">(Whatsapp OR Facebook) -(com.principal OR com.whatsapp)</a> You can group conditions and excluding them too</li>
+</ul>
 <h2 id="advanced-search">Advanced search</h2>
-<p>We provide an advance search to do more easy the search of malware o interesting samples. You can filter by tags, filesize, user's rating, ... For instance, if we can find applications with a rating less than -1 and from GooglePlay, you can use <code>rating:-1- and tag:googleplay</code>. This is usefull to detect applications rated by users that maybe are not detected by any ruleset.</p>
-<p>Another interesting search can be: <code>package_name:"com.whatsapp" and not developer:"WhatsApp Inc."</code></p>
-<p>the following table describe each of search modifiers availables, you can combine these as you can with <strong>and</strong>, <strong>or</strong> and <strong>not</strong>.</p>
+<p>We provide an advanced search to ease the search of malware or interesting samples. You can either filter by tags, filesize, user's rating, ... For instance, if we can find applications with a rating less than -1 and from GooglePlay, you can use <a href="https://koodous.com/apks?search=rating:&lt;=-1 tags:googleplay"><code>rating:&lt;=-1 tags:googleplay</code></a>. This is useful to detect applications rated by users that maybe are not detected by any ruleset.</p>
+<p>Another interesting search can be: <a href="https://koodous.com/apks?search=package_name:" title="com.whatsapp&quot;%20-developer:&quot;WhatsApp%20Inc."><code>package_name:"com.whatsapp" -developer:"WhatsApp Inc."</code></a></p>
+<p>The following table describes each search modifier available, you can combine these as you can with the previous examples on regular text search section.</p>
 <table>
 <thead>
 <tr>
@@ -337,11 +345,11 @@
 <tr>
 <td>Rating</td>
 <td align="center">rating:</td>
-<td>This modificator is used to obtain application with certain users rating. You can get applications with score greater or equal than 2 with <code>rating:2+</code>. Or more interesting, with score equal or less than -1 <code>rating:-1-</code></td>
+<td>This modificator is used to obtain application with certain users rating. You can get applications with score greater or equal than 2 with <code>rating:&gt;2</code>. Or more interesting, with score equal or less than -1 <code>rating:&gt;=-1</code></td>
 </tr>
 <tr>
 <td>Developer</td>
-<td align="center">developer:</td>
+<td align="center">developer: (or company:)</td>
 <td>The developer of each application is extracted from the certificate, and you can search by these using this modificator. For instance: <code>developer:"WhatsApp Inc."</code></td>
 </tr>
 <tr>
@@ -351,47 +359,77 @@
 </tr>
 <tr>
 <td>App Name</td>
-<td align="center">appname:</td>
+<td align="center">appname: (or app:)</td>
 <td>The name of the application, for instance: <code>appname:WhatsApp</code></td>
 </tr>
 <tr>
-<td>Filesize</td>
+<td>Filesize (in bytes)</td>
 <td align="center">size:</td>
-<td>The filesize of the APK file is, in many times, an indicator of their purpose. You can filter by this parameter with, for instance, for files greater or equal than 1MB: <code>size:1MB+</code>, or less than 700KB: <code>size:700KB-</code>.</td>
+<td>The filesize of the APK file is, in many times, an indicator of their purpose. You can filter by this parameter with, for instance, for files greater or equal than 1MB: <code>size:&gt;1000000</code>, or less than 700KB: <code>size:&lt;700000</code>. Last but not least, you can use ranges (from 700kb to 1MB) <code>size:[700000 TO 1000000]</code></td>
 </tr>
 <tr>
 <td>Tag</td>
-<td align="center">tag:</td>
-<td>We tag the samples with interesting word and each user can set by one or more tag to any sample, and you can find for this. For example, finding sample that we know come from Google Play: <code>tag:googleplay</code> or that any user has tagged as <strong>banker</strong> <code>tag:banker</code></td>
+<td align="center">tags: (or tag:)</td>
+<td>We tag the samples with interesting word and each user can set by one or more tag to any sample, and you can find for this. For example, finding sample that we know come from Google Play: <code>tags:googleplay</code> or that any user has tagged as <strong>banker</strong> <code>tags:banker</code></td>
+</tr>
+<tr>
+<td>Submission date</td>
+<td align="center">date: (or created_on:)</td>
+<td>The date when each APK was submitted is indexed and you can filter by that. For instance: <code>date:&lt;2015-06-16</code> for samples previous to this date and <code>date:&gt;2015-06-16</code> for samples submitted after this date. Here, ranges can be used too <code>date:[2015-06-16 TO 2015-06-17]</code></td>
 </tr>
 <tr>
 <td>Certificate</td>
-<td align="center">cert: or certificate:</td>
+<td align="center">certificate: (or cert:)</td>
 <td>Each application (as well the well-formed) has signed by a certificate. We have each certificate indexed and you can find by that, concretly by its <em>sha1</em>. For instance, we know that official Twitter application has <strong>40F3166BB567D3144BCA7DA466BB948B782270EA</strong> as sha1 certificate, then, we can found all versions of the official Twitter application with this: <code>cert:40F3166BB567D3144BCA7DA466BB948B782270EA</code> or <code>certificate:40F3166BB567D3144BCA7DA466BB948B782270EA</code> if you want to write a bit more :).</td>
 </tr>
 <tr>
 <td>Installed on devices</td>
-<td align="center">installed</td>
-<td>This search modifier has no parameters. It search only APKs that are installed or sometime was installed in some device. Example: <code>installed</code> or <code>not installed</code></td>
+<td align="center">installed: (or on_devices:)</td>
+<td>This search modifier has no parameters. It search only APKs that are installed or sometime was installed in some device. Example: <code>installed:true</code> or <code>installed:false</code></td>
 </tr>
 <tr>
 <td>Detected by community</td>
-<td align="center">detected</td>
-<td>This search modifier has no parameters. It search only APKs that has been detected by Koodous community. Example: <code>detected</code> or <code>not detected</code></td>
+<td align="center">detected:</td>
+<td>This search modifier has no parameters. It search only APKs that has been detected by Koodous community. Example: <code>detected:true</code> or <code>detected:false</code></td>
+</tr>
+<tr>
+<td>Hardcoded urls</td>
+<td align="center">url: (or urls:)</td>
+<td>Looks for urls inside APK with partial or full search. Example: <code>url:google.com</code> or <code>url:"https://play.google.com/store"</code></td>
+</tr>
+<tr>
+<td>Network hosts</td>
+<td align="center">network.hosts:</td>
+<td>Looks for hosts of connections made from the app. Example: <code>network.hosts:8.8.8.8</code></td>
+</tr>
+<tr>
+<td>Network http</td>
+<td align="center">network.http:</td>
+<td>Looks for http uris of connections made from the app (full or partial search). Example: <code>network.http:"com:80"</code></td>
+</tr>
+<tr>
+<td>Network DNS</td>
+<td align="center">network.dns:</td>
+<td>Looks for dns resolutions made from the app (full or partial search). Example: <code>network.dns:"google.com"</code></td>
+</tr>
+<tr>
+<td>Network domains</td>
+<td align="center">network.domains:</td>
+<td>Like dns (full or partial search). Example: <code>network.domains:"google.com"</code></td>
 </tr>
 </tbody>
 </table>
 <h2 id="the-detailed-view">The detailed view</h2>
 <p>Entering on the detailed view of an APK is as easy as clicking over its name or SHA256 hash. Once inside, it is possible to see more information, vote it, write comments, request an analysis or download it.</p>
-<p>The comment system is placed on a tab and is pretty straight-forward: write your findings or opinions and push Send. Just remember to be respectful with the rest of the community, do constructive critics and follow the standart netiquette. </p>
-<p>The up and down arrows on the right of the application image let you vote if that specific application is trustworthy or not. Please notice is not about how you like an application, but about how safe you think it is. </p>
-<p>Many APKs contain the <img alt="Corrupted" src="../../img/corrupted-tag.png" /> tag. This only mean that we don't detect a dex file OR a resources file OR a certificate. Many service apps installed on devices by default doesn't have a certificate, for instance, and we consider that it is corrupted.</p>
+<p>The comment system is placed on a tab and is pretty straight-forward: write your findings or opinions and click Send. Just remember to be respectful with the rest of the community, do constructive critics and follow the standard netiquette. </p>
+<p>The up and down arrows on the right of the application image allows you to vote if that specific application is trustworthy or not. Please notice this is not about how you like an application, but about how safe you think it is. </p>
+<p>Many APKs contain the <img alt="Corrupted" src="../../img/corrupted-tag.png" /> tag.  This just means that we haven't been able to detect a .dex file, resources file or a certificate. Many service APPs installed on devices don't have a certificate by default. Because of this, we consider that it's corrupted. </p>
 <p>You can download and send an analysis request using the specific buttons above the app image. </p>
 <h3 id="info-tabs">Info tabs</h3>
 <ul>
 <li>The <em>General info</em> tab shows a brief summary of the most identificative information. </li>
 <li>Depending on the app, another <em>Metadata</em> tab will appear showing a more complete report with information from Google Play, such as ratings and categories. </li>
-<li>If the APK has been analysed, another <em>Analysis</em> tab will show the report, also in json format. </li>
+<li>If the APK has been analyzed, another <em>Analysis</em> tab will show the report, also in json format. </li>
 </ul>
               
             </div>

@@ -302,13 +302,13 @@
             <div class="section">
               
                 <h1 id="introduction">Introduction</h1>
-<p>Droidbox is a tool to perform a dynamic analysis of Android applications. With this module developed to be used with Yara, you can match applications by several criteria based on the dynamic analysis.</p>
+<p>Droidbox is a tool to perform dynamic analysis of Android applications. With this module developed to be used with Yara, you can match applications by several criteria based on the dynamic analysis.</p>
 <p>First of all, you need to import the module with the next directive at the header of the ruleset.</p>
 <pre><code>import &quot;droidbox&quot;
 </code></pre>
 
 <h1 id="send-sms">Send SMS</h1>
-<p>If during the dynamic analysis the application send any SMS we register that. For instance, a tipical Android trojan after the installation and execution, it download a list of premium number and then send one SMS to each one.</p>
+<p>If during the dynamic analysis the application send any SMS we register that. For instance, a tipical Android trojan after the installation and execution, it downloads a list of premium numbers and then sends one SMS to each one.</p>
 <p>You can view this in the Droidbox report, under the <strong>Analysis report</strong> tab of the application (SMS).</p>
 <p>In order to detect this behaviour with Yara, we have created the next functionality:</p>
 <pre><code>//Remind to import the droidbox module!!
@@ -329,7 +329,7 @@ rule videogames
 </code></pre>
 
 <h1 id="phone-calls">Phone calls</h1>
-<p>Some times the applications make calls (in background or showing to the user, shamelessly!), you can detect this applications with this simple condition:</p>
+<p>Some times the applications make calls (in background or showing to the user, shamelessly!), you can detect these applications with this simple condition:</p>
 <pre><code>rule videogames
 {
     condition:

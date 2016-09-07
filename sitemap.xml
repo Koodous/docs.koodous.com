@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,13 +13,13 @@
         
     <url>
      <loc>None/web/getting-started/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/web/the-repo/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -29,7 +29,7 @@
         
     <url>
      <loc>None/rest-api/getting-started/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -39,37 +39,37 @@
         
     <url>
      <loc>None/rest-api/apks/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/rest-api/apk-download/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/rest-api/apk-upload/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/rest-api/apk-analysis/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/feed/apks/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/feed/analyses/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -79,43 +79,43 @@
         
     <url>
      <loc>None/rest-api/apk-comments/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/rest-api/apk-votes/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/rest-api/analysts/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/rest-api/user_rulesets/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/rest-api/public_rulesets/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/rest-api/public_rulesets_votes/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/rest-api/public_rulesets_comments/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -125,25 +125,25 @@
         
     <url>
      <loc>None/yara/getting-started/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/yara/androguard/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/yara/droidbox/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/yara/file/</loc>
-     <lastmod>2016-08-31</lastmod>
+     <lastmod>2016-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
