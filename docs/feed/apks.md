@@ -43,6 +43,21 @@ curl -g -O -J -L -H "Authorization: Token YOURTOKEN" https://api.koodous.com/fee
 # curl: Saved to filename 'apk_20160610T1025.zip'
 ```
 
+## Complete script with samples download
+Save the code below to feed-apk.sh and run it with `sh feed-apk.sh YOURTOKEN`
+```bash
+curl -s -g -O -J -L -H "Authorization: Token $1" https://api.koodous.com/feed/apks
+unzip -o apk*.zip
+rm apk*.zip
+mkdir downloads
+while read p; do
+	IFS=';' read -r -a array <<< "$p"
+	echo "Downloading ${array[0]}"
+	curl -s ${array[1]} > downloads/${array[0]}.apk
+done < samples
+rm samples
+```
+
 ## Python Script
 
 You can use our feed.py script. Check it out [here](https://github.com/Koodous/Scripts/blob/master/feed.py)
