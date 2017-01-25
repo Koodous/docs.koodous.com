@@ -38,23 +38,6 @@ Examples:
 * `https://api.koodous.com/apks/cc489e3296408abbfbd5e2aad0665abd60bae3442d10bcc702a7e8424e547544`
 * `https://api.koodous.com/apks?cursor=cD0yMDE1LTA3LTA4KzE0JTNBMTAlM0E1MyUyQjAwJTNBMDA%3D`
 
-## Search, filters and ordering
-
-* **?search** _Text that search using fields **app**, **package_name** and **company**
-* **?analyzed=(True|False)** _Boolean to filter apks analyzed or not_
-* **?detected=(True|False)** _Boolean to filter apks detected or not by koodous community_
-* **?md5** _md5 lookup_
-* **?sha1** _sha1 lookup_
-* **?sha256** _sha256 lookup_
-
-
-Examples:
-
-* Example: `https://api.koodous.com/apks?search=Facebook`
-* Example: `https://api.koodous.com/apks?analyzed=True`
-* Example: `https://api.koodous.com/apks?md5=8fee025ee05aa599a29ef6563b24d027`
-* Example: `https://api.koodous.com/apks?sha1=1d4d60016e4c404886d5a6e624f0cece6d45bc49`
-
 _**Note:** Our advanced search system can be used in our API as a simple search, check [advanced search section](/web/the-repo/#advanced-search)_
 
 ## Example request
