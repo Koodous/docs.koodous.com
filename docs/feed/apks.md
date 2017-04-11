@@ -7,7 +7,7 @@ If you want to download all APKs from our repository as soon we add them you can
 You can obtain a .zip file containing a list of URL samples from the lastest 5 minutes to 60. With an argument, you can choose the range you prefer. 
 
 
-## Example simple request
+## Simple request example
 
 `https://api.koodous.com/feed/apks(?package=)`
 

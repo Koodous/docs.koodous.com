@@ -25,6 +25,7 @@ pages:
   - APK Analysis: 'rest-api/apk-analysis.md'
   - APKs feed: 'feed/apks.md'
   - Analyses feed: 'feed/analyses.md'
+  - Detected feed: 'feed/detected.md'
 
 - REST API (misc methods):
   - APK Comments: 'rest-api/apk-comments.md'

@@ -1,14 +1,14 @@
-# Analyses feed
+# Detected samples feed
 
 ***This is a private method. If you want to use it contact us at [info@koodous.com](mailto:info@koodous.com)***
 
-If you want to download all APKs analysis reports from our repository as soon we add them you can use this method.
+If you want to download the analysis of the detected samples from our repository as soon we add them you can use this method.
 
-You can obtain a .zip file containing a JSON full of reports from the lastest 5 minutes to 60. With an argument, you can select the preferred range. 
+You can obtain a .zip file containing a JSON full of reports from the latest 5 minutes to 60. With an argument, you can select the preferred range. 
 
 ## Simple request example
 
-`https://api.koodous.com/feed/analyses(?package=)`
+`https://api.koodous.com/feed/detected(?package=)`
 
 This request redirects you to the latest .zip
 
@@ -17,12 +17,12 @@ This request redirects you to the latest .zip
 A basic analysis feed request.
 
 ```bash
-curl -g -O -J -L -H "Authorization: Token YOURTOKEN" https://api.koodous.com/feed/analyses
+curl -g -O -J -L -H "Authorization: Token YOURTOKEN" https://api.koodous.com/feed/detected
 #   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 #                                  Dload  Upload   Total   Spent    Left  Speed
 #   0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
 # 100 14283  100 14283    0     0   7251      0  0:00:01  0:00:01 --:--:--  108k
-# curl: Saved to filename 'apk_20160613T1040.zip'
+# curl: Saved to filename 'detected_20170411T1040.zip'
 ```
 
 ## Curl example with params
@@ -34,12 +34,12 @@ The package should have the next format: YYYYMMDDTHHMM. Example: 20160510T1025 (
 Each package is available a week right after its creation. 
 
 ```bash
-curl -g -O -J -L -H "Authorization: Token YOURTOKEN" https://api.koodous.com/feed/analyses?package=20160610T1025
+curl -g -O -J -L -H "Authorization: Token YOURTOKEN" https://api.koodous.com/feed/detected?package=20170411T1020
 #   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 #                                  Dload  Upload   Total   Spent    Left  Speed
 #   0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
 # 100 27305  100 27305    0     0  13071      0  0:00:02  0:00:02 --:--:-- 66924
-# curl: Saved to filename 'analysis_20160610T1025.zip'
+# curl: Saved to filename 'detected_20170411T1020.zip'
 ```
 
 ## Python Script
@@ -49,13 +49,13 @@ You can use our feed.py script. Check it out [here](https://github.com/Koodous/S
 The usage is simple: modify the script and replace `TOKEN = "" ` with your API token and then:
 
 ```bash
-python feed.py --analysis 5
-# Downloaded analysis in analysis/analysis_20160613T1055.zip
+python feed.py --detected 5
+# Downloaded file detected/detected_20160613T1055.zip with analyses of detected samples
 # Waiting for the next package
 # Waiting 5 minutes
 
-python feed.py --analysis 60
-# Downloaded analysis in analysis/analysis_20160613T1055.zip
+python feed.py --detected 60
+# Downloaded file detected/detected_20160613T10.zip with analyses of detected samples
 # Waiting for the next package
 # Waiting 60 minutes
 ```
@@ -64,15 +64,15 @@ python feed.py --analysis 60
 ## Output example
 The previous scripts/commands returns a .zip file with the next structure:
 ```bash
-$ curl -g -O -J -L -H "Authorization: Token YOUTOKEN" https://api.koodous.com/feed/analyses
+$ curl -g -O -J -L -H "Authorization: Token YOUTOKEN" https://api.koodous.com/feed/detected
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
 100 3616k  100 3616k    0     0  2374k      0  0:00:01  0:00:01 --:--:-- 2374k
-curl: Saved to filename 'analysis_20160610T1025.zip'
+curl: Saved to filename 'detected_20170411T1020.zip'
 
-$ unzip analysis_20160610T1025.zip 
-Archive:  analysis_20160610T1025.zip
+$ unzip detected_20170411T1020.zip 
+Archive:  detected_20170411T1020.zip
  extracting: 8ec8bf98cfc5269ce8ad56c4465d680a7f68b14e39a58fdad2f2be26af3e44f8.json  
  extracting: b3e8856b74ec70c40bd44706ff8dc8e9119d8c2e57cd051dbce7f90de304399f.json  
  extracting: fd60be21459b73eb6db9d16bc15e5e632e5f6e5f874cb472617b38a62ddb0fcf.json  
@@ -86,4 +86,4 @@ Archive:  analysis_20160610T1025.zip
 
 ```
 
-The unzip command will generate as many ```json``` files as analysis were made in that period of time. The analysis' JSON format follows the same structure as the one you can obtain from the "Analysis report" tab on each sample. 
+The unzip command will generate as many ```json``` files as analysis were made in that period of time. The analyses' JSON format follows the same structure as the one you can obtain from the "Analysis report" tab on each sample. 
