@@ -80,7 +80,9 @@ droidbox.written.filename(/libdexprotector/) // By regex, more powerful
 
 Also, the data written. If it is binary data, we will represent as hexbytes, but if it's a text, you can use ascii directly.:
 ```
-droidbox.written.data(/6465780A303335/) // Write the header of a dex file
+droidbox.written.data(/6465780a303335/) // Write the header of a dex file
+//If you prefer write hex data in uppercase, you must use the insensitive case flag:
+droidbox.written.data(/6465780A303335/i)
 ```
 Or if you are looking for a specific text:
 ```
@@ -94,6 +96,6 @@ Like this module working with written files, it works with read files and its da
 droidbox.read.filename("/proc/meminfo")
 droidbox.read.filename(/meminfo/)
 // For data:
-droidbox.read.data(/6465780A303335/) // Read the header of a dex file (not load, only read)
+droidbox.read.data(/6465780A303335/i) // Read the header of a dex file (not load, only read)
 droidbox.read.data("ID: 645r327673gfngnc")
 ```
