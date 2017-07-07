@@ -1,6 +1,6 @@
 Koodous is a collaborative platform focused on the detection of fraudulent patterns in Android applications.
 
-## Holly cow, it's full of apps
+## Holy cow, it's full of apps
 
 We provide you literally millions of apks to download and analyze. The repository is constantly being updated with new packages from several sources, both official and unofficial. And here comes the best part: it's totally for free.
 
