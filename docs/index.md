@@ -6,7 +6,7 @@ Koodous is a collaborative platform for Android malware research that combines t
 
 ## Write your Yara code
 
-Write your own Yara rules to find interesting Android apps and identify possible threads.
+Write your own Yara rules to find interesting Android apps and identify possible threats.
 
 ![Koodous Yara](img/koodous-yara.png)
 
@@ -18,6 +18,6 @@ Use our powerful search system to find the APK your are looking for between mill
 
 ## Notifications
 
-Get noticed about your detections with our notifications system.
+Get notified about your detections with our notifications system.
 
 ![Koodous Notifications](img/koodous-notifications.png)
