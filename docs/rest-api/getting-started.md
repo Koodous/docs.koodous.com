@@ -55,15 +55,6 @@ Response format is JSON. The example response of the previous request will look 
 }
 ```
 
-## API levels
-
-Depending on your API level, you can have different limits when interacting with the Koodous API.
-
-| Range | Basic | Bronze | Silver | Gold + Feed |
-| :---: |:---:|:---:|:---:|:---:|
-| **APK downloads** | 50/day | 500/day | 1000/day | 2000/day |
-| **Analysis requests**| 50/day | 250/day | 500/day | 1000/day |
-
 ## Python example
 
 Here you have an example using Python and [requests library](http://docs.python-requests.org/en/latest/):

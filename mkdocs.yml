@@ -1,9 +1,8 @@
 site_name: Koodous Documentation
-site_favicon: favicon.png
 google_analytics: ['UA-62062848-2', 'docs.koodous.com']
 strict: true
 theme: readthedocs
-pages:
+nav:
 - Home: 'index.md'
 
 - The Koodous web:
