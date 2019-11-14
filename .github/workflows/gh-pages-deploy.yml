@@ -16,5 +16,6 @@ jobs:
     - name: Setup python
       uses: actions/setup-python@v1
     - run: |
+        cd docs.koodous.com/
         pip install -r requirements
         mkdocs gh-deploy
