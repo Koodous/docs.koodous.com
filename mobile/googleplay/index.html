@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Getting started - Koodous Documentation</title>
+  <title>Googleplay - Koodous Documentation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Getting started";
-    var mkdocs_page_input_path = "yara/getting-started.md";
+    var mkdocs_page_name = "Googleplay";
+    var mkdocs_page_input_path = "mobile/googleplay.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -163,35 +163,21 @@
 		
     <span class="caption-text">Yara</span>
     <ul class="subnav">
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Getting started</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#getting-started">Getting started</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#basic-steps">Basic steps</a></li>
-        
-            <li><a class="toctree-l4" href="#yara-works-over">Yara works over...</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../../yara/getting-started/">Getting started</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../androguard/">Androguard</a>
+    <a class="" href="../../yara/androguard/">Androguard</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../droidbox/">Droidbox</a>
+    <a class="" href="../../yara/droidbox/">Droidbox</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../file/">File</a>
+    <a class="" href="../../yara/file/">File</a>
                 </li>
     </ul>
 	    </li>
@@ -217,12 +203,8 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
-        
-          <li>Yara &raquo;</li>
-        
-      
     
-    <li>Getting started</li>
+    <li>Googleplay</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -232,29 +214,16 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="getting-started">Getting started</h1>
-<p>The Yara tool aims to help detection of any kind of malware, but in this case, Android Malware Applications. With Yara rules you can create a "description" of malware families to detect new samples.</p>
-<p>Our implementation of Yara is based on the original one, but with some extra modules in order to increase the usability of the ruleset with the knowledge extracted with the dynamic and the static analysis of each sample.</p>
-<h2 id="basic-steps">Basic steps</h2>
-<p>To start writing Yara rules, you can use the official documentation <a href="https://yara.readthedocs.org/">https://yara.readthedocs.org/</a> where the author explains <a href="https://yara.readthedocs.org/en/latest/writingrules.html">how to write yara rules</a>.</p>
-<h2 id="yara-works-over">Yara works over...</h2>
-<p>We want to inform you how we are scanning the files with Yara in order to improve the detection of new malware samples.</p>
-<p>First, we extract the information about dynamic and static analysis and used them together with the APK file to try to match.
-Then, we decompress the APK and run Yara over these files. </p>
-<p>If you have any suggestion about the analysis or the Yara scan, you can write us to <a href="mailto:analysis@koodous.com">analysis@koodous.com</a></p>
+                <p>The Koodous app is on its way to Google Play. In the meantime, let us point out its main features:</p>
+<p>The app will behave in one out of two ways depending if it has been linked with the user's Koodous web account or not.</p>
+<h2 id="detect-fraudulent-apps">Detect fraudulent apps</h2>
+<p>Using Yara rules and the votes of the Koodous community, the app can establish if there are fraudulent applications installed on your device. Our application will cross your installed apps with the Koodous database, warning you if any of the applications in your device is tagged as a fraud.</p>
+<h2 id="analysts">Analysts</h2>
+<p>The analysts in the Koodous community can link their devices with their Koodous web account. This way, only the social rules made by them and by the analysts they are following will be applied to their devices.</p>
               
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../androguard/" class="btn btn-neutral float-right" title="Androguard">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../../rest-api/public_rulesets_comments/" class="btn btn-neutral" title="Public Rulesets Comments"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -278,10 +247,6 @@ Then, we decompress the APK and run Yara over these files. </p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../rest-api/public_rulesets_comments/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../androguard/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
