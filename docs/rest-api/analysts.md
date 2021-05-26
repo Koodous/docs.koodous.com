@@ -44,7 +44,7 @@ Examples:
 
 ## Example request
 
-`https://api.koodous.com/apks/analysts`
+`https://api.koodous.com/analysts`
 
 ## Example result
 ```json
