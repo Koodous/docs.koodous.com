@@ -1,107 +1,125 @@
 # APKs feed
 
-***This is a private method. If you want to use it contact us at [info@koodous.com](mailto:info@koodous.com)***
+***This is a private method. In order to use this method you must authenticate with token that has feed privileges.
+For more information you can contact us at [info@koodous.com](mailto:info@koodous.com)***
 
 If you want to download all APKs from our repository as soon we add them you can use this method.
 
-You can obtain a .zip file containing a list of URL samples from the lastest 5 minutes to 60. With an argument, you can choose the range you prefer. 
+You can obtain a package *.zip* containing a list of URL samples.
 
+## How the feed works
 
-## Simple request example
+The packages are created every five minutes with the received apks in that period of time. A package is also created
+with all the apks received in the period of one hour. You can choose between them.
 
-`https://api.koodous.com/feed/apks(?package=)`
+The last twelve packages created every five minutes are equivalent to the last package created every hour.
 
-This request redirects you to the latest .zip
+The packages are only available for a week after its creation. For example, a package that was created on 20/05/2021
+will be available until 27/05/2021.
 
-## Curl basic example
+## Get the apks feed
 
-A basic APK list request.
+> This is methods needs authentication with feed privileges.
 
-```bash
-curl -g -O -J -L -H "Authorization: Token YOURTOKEN" https://api.koodous.com/feed/apks
-#   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-#                                  Dload  Upload   Total   Spent    Left  Speed
-#   0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
-# 100 14283  100 14283    0     0   7251      0  0:00:01  0:00:01 --:--:--  108k
-# curl: Saved to filename 'apk_20160613T1040.zip'
+`GET https://api.koodous.com/feed/apks`
+
+By default, without the ``package`` parameter the package served on request is from the last 5 minutes.
+
+### Query string parameters
+
+| Attribute |  Type  | Required |                                  Description                                  |
+|:---------:|:------:|:--------:|:-----------------------------------------------------------------------------:|
+| package   | string | no       | Specify the package.<br>Read the package format section for more information. |
+
+### Package parameter format
+
+The package must follow the format **%Y%m%dT%H%M** for packages created every 5 minutes or **%Y%m%dT%H** for packages 
+created every hour.
+
+| Directive | Meaning                                               | Example         |
+|-----------|-------------------------------------------------------|-----------------|
+| %Y        | Year with century as a decimal number.                | 2013, 2019 etc. |
+| %m        | Month as a zero-padded decimal number.                | 01, 02, ..., 12 |
+| %d        | Day of the month as a zero-padded decimal.            | 01, 02, ..., 31 |
+| %H        | Hour (24-hour clock) as a zero-padded decimal number. | 00, 01, ..., 23 |
+| %M        | Minute as a zero-padded decimal number.               | 00, 01, ..., 59 |
+
+Examples of package format: ``20210521T5``, ``20210521T1015``
+
+The packages are generated starting at 00:00, so the packages created every five minutes always ends with 0 or 5.
+A package like ``20210521T1013`` is not valid.
+
+In Python, you can generate the package string easily with the library datetime:
+
+```python
+import datetime
+
+datetime.datetime(
+    year=2021,
+    month=5,
+    day=21,
+    hour=12,
+    minute=15
+).strftime('%Y%m%dT%H%M')  # Or '%Y%m%dT%H' if you want the entire package of the last hour.
 ```
 
-## Curl example with params
-
-You can download a specific package using `?package` param:
-
-The package should have the next format: YYYYMMDDTHHMM. Example: 20160510T1025 (The latest number can be only 5 or 0).
-
-Each package is available a week right after its creation. 
-
-```bash
-curl -g -O -J -L -H "Authorization: Token YOURTOKEN" https://api.koodous.com/feed/apks?package=20160610T1025
-#   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-#                                  Dload  Upload   Total   Spent    Left  Speed
-#   0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
-# 100 27305  100 27305    0     0  13071      0  0:00:02  0:00:02 --:--:-- 66924
-# curl: Saved to filename 'apk_20160610T1025.zip'
+```
+'20210521T1215'
 ```
 
-## Complete script with samples download
-Save the code below to feed-apk.sh and run it with `sh feed-apk.sh YOURTOKEN`
-```bash
-curl -s -g -O -J -L -H "Authorization: Token $1" https://api.koodous.com/feed/apks
-unzip -o apk*.zip
-rm apk*.zip
-mkdir downloads
-while read p; do
-	IFS=';' read -r -a array <<< "$p"
-	echo "Downloading ${array[0]}"
-	curl -s ${array[1]} > downloads/${array[0]}.apk
-done < samples
-rm samples
+## Script to download the apks feed
+
+```python
+import requests
+
+url = 'https://api.koodous.com/feed/apks'
+package = '20210521T1215'
+params = {'package': package}
+headers = {'Authorization': 'Token <YOUR_TOKEN>'}
+# Do the request and get the package.
+r = requests.get(url, params=params, headers=headers)
+# Check that the package is available and store it.
+if r.status_code == 200:
+    filename = 'apk_' + package + '.zip'
+    with open(filename, 'wb') as f:
+        f.write(r.content)
+elif r.status_code == 404:
+    raise Exception('The package is not available.')
+elif r.status_code == 401:
+    raise Exception('The token is invalid or doesn\'t have privileges.')
+else:
+    raise Exception(f'Other error occurred. Response code: {r.status_code}')
 ```
 
-## Python Script
+You can also obtain the original filename:
 
-You can use our feed.py script. Check it out [here](https://github.com/Koodous/Scripts/blob/master/feed.py)
+```python
+filename = r.headers['Content-Disposition'].split('; ')[1].split('=')[1][1:-1]
+```
 
-The usage is simple: modify the script and replace `TOKEN = "" ` with your API token and then:
+## Curl command to download the feed
+
+Downloading the package from the last 5 minutes.
 
 ```bash
-python feed.py --apks 5
-# Downloaded file apks/apk_20160613T1055.zip with samples download link
-# Waiting for the next package
-# Waiting 5 minutes
-
-python feed.py --apks 60
-# Downloaded file apks/apk_20160613T1055.zip with samples download link
-# Waiting for the next package
-# Waiting 60 minutes
+curl -g -O -J -L -H "Authorization: Token YOUR_TOKEN" https://api.koodous.com/feed/apks
 ```
 
 ## Output example
 
 The previous scripts/commands returns a .zip with a file named ```samples``` inside:
-```bash
-$ curl -g -O -J -L -H "Authorization: Token YOURTOKEN" https://api.koodous.com/feed/apks
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
-100  346k  100  346k    0     0   217k      0  0:00:01  0:00:01 --:--:-- 1581k
-curl: Saved to filename 'apk_20160613T1055.zip'
 
-$ unzip apk_20160613T1055.zip 
-Archive:  apk_20160613T1055.zip
+```bash
+$ unzip apk_20210521T5.zip 
+Archive:  apk_20210521T5.zip
  extracting: samples                 
 
 $ head samples
-4ec241ca61f1fcdd1ebc594ea3fe58c2ee3ba16a6d9e4c6a607ad41a2fcb4cc3;https://storage.koodous.com/download_id
-0b1fddf4e8a3b61545c08318230b0ae6f0e4dc4bbb0ca0f0505308e4e1b861b9;https://storage.koodous.com/download_id
-62a8ffe8f6583f9003d7187f927fce638030f7836f56c471758beed19bba51e3;https://storage.koodous.com/download_id
-346b99d75fafd71b7d9f9e1461b6c2e060539e5435ded2e59d55b94483963313;https://storage.koodous.com/download_id
-3aebe69047c15be5101738f90cdd5eff7e3fd644a41110c4a8a489a34e87d273;https://storage.koodous.com/download_id
-3359d33fdc2d064ad1d383b0aab35ca7d52372c026b941b0603200a024b11674;https://storage.koodous.com/download_id
-6c0846c0081a214cda84456b4c163a994f9eb38d5983727817c2954b1e24b18f;https://storage.koodous.com/download_id
-33e06081e1fae22b46c3a2d40f58361e43d44b18c05f0c1b46f212323f4489e1;https://storage.koodous.com/download_id
-de9c173a5884f4bff30d080f3f2dc86a34b228377e443cc18e09e4f1e2f1aefc;https://storage.koodous.com/download_id
-85a4b2b6768a476b46b880dcd0ed39b9e9d0fa02fd30e0d8783f81b318f7370b;https://storage.koodous.com/download_id
+sha256_apk1;https://storage.koodous.com/download_id_apk1
+sha256_apk2;https://storage.koodous.com/download_id_apk2
+sha256_apk3;https://storage.koodous.com/download_id_apk3
+[... MORE ...]
 ```
 
-The ```samples``` file contains the sha256 of the sample and a direct download link per line. Using this link you can download the sample directly.
+The ``samples`` file contains the sha256 of the sample, and a direct download link per line.
+Using this link you can download the sample directly.
